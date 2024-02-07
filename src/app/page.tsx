@@ -1,95 +1,70 @@
-import Image from "next/image";
+import Card from "@/Components/Atoms/Card/Card";
+import CardWithLinkAction from "@/Components/Atoms/CardWithLinkAction/CardWithLinkAction";
+import SharedData from "../Utils/SharedData";
+import NavBar from "@/Components/Atoms/NarBar/NavBar";
+import HeadlineCard from "@/Components/Atoms/HeadlineCard/HeadlineCard";
+import HeadlineTopCard from "@/Components/Atoms/HeadlineCard/HeadlineTopCard/HeadlineTopCard";
+import HeadlineRightCard from "@/Components/Atoms/HeadlineCard/HeadlineRightCard/HeadlineRightCard";
 import styles from "./page.module.css";
+import HeadlineBottomCard from "@/Components/Atoms/HeadlineCard/HeadlineBottomCard/HeadlineBottomCard";
+import Scoreboard from "@/Components/Atoms/Scoreboard/Scoreboard";
+import HeaderCarousel from "@/Components/Atoms/HeaderCarousel/HeaderCarousel";
+import SubNavBar from "@/Components/Atoms/NarBar/SubNavBar/SubNavBar";
+import Button from "@/Components/Atoms/Button/Button";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      {/* <div className={styles.navbar}>
+      <NavBarClient/>
+      </div>
+      <div className={styles.main}>
+        <div className={styles.col_one}>
+          <Card backgroundColor="#f9f9fb">
+            <CardWithLinkAction
+              header="Quick Links"
+              quickLinks={SharedData.quickLinks}
+            ></CardWithLinkAction>
+          </Card>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className={styles.col_two}>
+          <HeadlineCard>
+            <HeadlineTopCard></HeadlineTopCard>
+            <HeadlineBottomCard></HeadlineBottomCard>
+          </HeadlineCard>
+        </div>
+        <div className={styles.col_three}>
+          <Card>
+            <HeadlineRightCard></HeadlineRightCard>
+          </Card>
+        </div>
+      </div> */}
+      {/* <div className={styles.scoreboard}>
+      <Scoreboard games={SharedData.nbaGames}/>
+      <Scoreboard games={SharedData.ncaamGames} />
+      </div> */}
+      {/* <HeaderCarousel />
+      <div className={styles.navbar}>
+        <NavBar regionTeams={[]} />
+      </div> */}
+      {/* <Card backgroundColor="#f9f9fb">
+        <CardWithLinkAction
+          header="Quick Links"
+          quickLinks={SharedData.quickLinks}
+        ></CardWithLinkAction>
+      </Card> */}
+      {/* <HeadlineCard>
+        <HeadlineTopCard></HeadlineTopCard>
+        <HeadlineBottomCard></HeadlineBottomCard>
+      </HeadlineCard>
+      <Card>
+        <HeadlineRightCard></HeadlineRightCard>
+      </Card> */}
+      <div className={styles.buttonContainer}>
+      <Button>Sign Up</Button>
+      <Button variant="secondary">Log In</Button>
+      <Button variant="yellow" iconPath="espnplus.svg">Get</Button>
       </div>
     </main>
   );
-}
+} 

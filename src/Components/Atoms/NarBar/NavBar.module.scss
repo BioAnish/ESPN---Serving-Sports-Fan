@@ -1,0 +1,252 @@
+.nav {
+  background-color: #2b2c2d;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  position: relative;
+  .logo {
+    float: left;
+    position: relative;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    &::after {
+      background: #b40000;
+      left: -10px;
+      right: -20px;
+      transform: skew(-25deg, 0);
+      content: "";
+      display: block;
+      height: calc(44px - 1px);
+      position: absolute;
+      top: 0;
+    }
+    &::before {
+      transform: skew(-25deg, 0);
+      content: "";
+      display: block;
+      height: calc(44px - 1px);
+      position: absolute;
+      top: 0;
+      left: -60px;
+      background: #d00;
+      right: -10px;
+      z-index: 1;
+    }
+    .logolink {
+      background-image: url(https://a.espncdn.com/redesign/assets/img/logos/logo-espn-82x20@2x.png) !important;
+      background-size: 82px 20px !important;
+      width: 88px;
+      background-position: center center;
+      background-repeat: no-repeat !important;
+      color: transparent;
+      font: 0/0 a;
+      text-shadow: none;
+      display: block;
+      height: 44px;
+      margin-left: 36px;
+      position: relative;
+      outline: 0 !important;
+      background: transparent;
+      text-decoration: none;
+      z-index: 1;
+      top: 10px;
+    }
+  }
+  .ul {
+    list-style: none;
+    padding: 0 100px 0 40px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    .li:hover .dropdownArrowContent {
+      display: flex;
+    }
+    .li:hover::before {
+      opacity: 1; /* Show the triangle arrow when hovering over any li */
+    }
+    .li {
+      float: left;
+      position: relative;
+      margin-right: 12px;
+      height: 44px;
+      line-height: calc(44px - 1px);
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 8px 8px 8px;
+        border-color: transparent transparent #ffffff transparent;
+        z-index: 1000041;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.1s ease-in-out; /* Add a smooth transition effect */
+      }
+      .a {
+        color: #ffffff;
+        font-size: 14px;
+        text-decoration: none;
+        span {
+          height: 44px;
+          display: block;
+          position: relative;
+        }
+        .espnplus {
+          background: url(https://a.espncdn.com/redesign/assets/img/logos/espnplus/ESPN+White.svg);
+          background-size: auto 17.5px;
+          width: 70px;
+          top: 13px;
+          background-repeat: no-repeat;
+        }
+        .espnbet {
+          background: url(https://a.espncdn.com/redesign/assets/img/logos/espnbet/ESPNBET_Horizontal_Primary.svg);
+          background-size: auto 17.5px;
+          width: 96px;
+          top: 13px;
+          background-repeat: no-repeat;
+        }
+      }
+      .arrow {
+        &::after {
+          position: relative;
+          content: "";
+          display: inline-block;
+          border: solid #ffffff;
+          border-width: 0 1px 1px 0;
+          padding: 3px;
+          transform: rotate(45deg);
+          margin-left: 14px;
+          top: -3px;
+        }
+      }
+      .dropdownArrowContent {
+        display: none;
+        position: absolute;
+        transition: max-height 0.2s ease-in;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000051;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 8px 0;
+        top: 44px;
+        .anish {
+          .dropdownBox {
+            background: #fff;
+            padding: 0 10px;
+            list-style: none;
+            margin: 0;
+            .dropdownBoxItem {
+              border: 0;
+              font: inherit;
+              font-size: 100%;
+              margin: 0;
+              padding: 0;
+              vertical-align: baseline;
+              display: list-item;
+              .dropdownBoxItemLink {
+                border-radius: 3px;
+                color: #6c6d6f;
+                display: block;
+                font-size: 13px;
+                font-weight: 400;
+                height: auto;
+                line-height: 160%;
+                min-width: 200px;
+                padding: 10px;
+                position: relative;
+                text-align: left;
+                &:hover {
+                  background-color: #d00;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+        .listWrapper {
+          .listWrapperUl {
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            .dropdownBoxItem {
+              border: 0;
+              font: inherit;
+              font-size: 100%;
+              margin: 0;
+              padding: 0;
+              vertical-align: baseline;
+              display: list-item;
+              .submenuWrapper {
+                background: #f1f2f3;
+                border-radius: 6px;
+                margin-right: 12px;
+                padding: 12px;
+                width: 800px;
+                overflow: hidden;
+                ul{
+                  float: left;
+                  line-height: 100%;
+                  padding-bottom: 8px !important;
+                  width: 25%;
+                  padding: 0;
+                  margin: 0;
+                  list-style: none;
+                  .conference {
+                    display: block;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    padding: 0 0 0 8px;
+                    display: list-item;
+                    text-align: left;
+                    font-size: 12px;
+                    span{
+                      color: #48494a;
+                      font-weight: 600;
+                      white-space: nowrap;
+                    }
+                  }
+                  .team {
+                    &:hover {
+                      background-color: #ffffff;
+                    }
+                    a {
+                      color: #6c6d6f;
+                      display: flex;
+                      line-height: 32px;
+                      padding: 0 8px;
+                      white-space: nowrap;
+                      .nav_logo_wrap {
+                        height: 30px;
+                        max-height: 30px;
+                        margin: 0 8px 0 0 !important;
+                        max-width: 30px;
+                        min-width: 30px;
+                        padding: 3px 0 0 5px !important;
+                      }
+                      .link_text {
+                        color: #6c6d6f;
+                        font-size: 12px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .floatright {
+      float: right;
+    }
+  }
+}

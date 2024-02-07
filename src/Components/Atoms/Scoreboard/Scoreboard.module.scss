@@ -1,0 +1,157 @@
+.ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  .li {
+    .scoreboard {
+      display: flex;
+      .scoreLabel {
+        min-width: 60px;
+        border-right: 1px solid #a5a6a7;
+        .scoreLabel_content {
+          display: flex;
+          position: relative;
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          padding: 0 10px;
+          background: #edeef0;
+          height: 66px;
+          border-left: 1px solid #a5a6a7;
+          &:hover {
+            .scoreLabel_link {
+              display: block;
+            }
+          }
+          h2 {
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            color: #1d1e1f;
+            text-align: center;
+          }
+          .scoreLabel_link {
+            font-size: 10px;
+            display: none;
+          }
+        }
+      }
+      .cscore {
+        background: #fff;
+        position: relative;
+        cursor: pointer;
+        &:last-child {
+          border-right: 1px solid #a5a6a7;
+        }
+        &:hover {
+          .cscore_header_links {
+            display: block;
+          }
+        }
+        .cscore_header_links {
+          background-color: #edeef0;
+          border-left: 1px solid #a5a6a7;
+          display: none;
+          height: 100%;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+          color: #48494a;
+          .cscore_header_link {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            border-bottom: 1px solid #a5a6a7;
+            border-right: 1px solid #a5a6a7;
+            line-height: 32.5px;
+            overflow: hidden;
+            padding: 0 6px;
+            text-align: center;
+            text-overflow: ellipsis;
+          }
+        }
+        .cscore_link {
+          display: block;
+          padding: 5px 12px;
+          .cscore_overview {
+            display: flex;
+            align-items: center;
+            padding-bottom: 4px;
+            .cscore_date_time {
+              padding-right: 10px;
+              color: #48494a;
+              font-size: 11px;
+              font-weight: 600;
+            }
+            .cscore_network {
+              margin-left: auto;
+              text-align: right;
+              font-size: 11px;
+              color: #6c6d6f;
+            }
+          }
+          .cscore_details {
+            .cscore_competitors {
+              position: relative;
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              .cscore_item {
+                display: flex;
+                align-items: center;
+                position: relative;
+                &:first-child {
+                  padding-bottom: 2px;
+                }
+                .cscore_logo {
+                  padding-right: 5px;
+                  position: relative;
+                  vertical-align: middle;
+                  line-height: 1;
+                  img {
+                    height: 16px;
+                    width: 16px;
+                  }
+                }
+                .cscore_team {
+                  display: flex;
+                  align-items: center;
+                  flex: 1 0 auto;
+                  .cscore_truncate {
+                    color: #1d1e1f;
+                    font-size: initial;
+                    overflow: hidden;
+                    padding-right: 10px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    span {
+                      font-size: 11px;
+                      display: inline;
+                      font-weight: 600;
+                      line-height: 1.3;
+                      text-transform: uppercase;
+                    }
+                  }
+                  .cscore_score {
+                    font-size: 10px;
+                    color: #a5a6a7;
+                    font-weight: 400;
+                    font-variant-numeric: tabular-nums;
+                    line-height: 1.3px;
+                    margin-left: auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
