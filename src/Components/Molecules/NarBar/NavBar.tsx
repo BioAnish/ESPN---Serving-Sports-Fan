@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import styles from "./NavBar.module.scss";
 import SubNavBar from "./SubNavBar/SubNavBar";
-import { Team, RegionTeam, Tab } from "./NavBar.types";
+import { RegionTeam, Tab, Team } from "./NavBar.types";
 import SharedData from "@/Utils/SharedData";
+import Dropdown from "../../Atoms/DropdownMenu/DropdownMenu";
+import HeaderTools from "@/Components/Molecules/HeaderTools/HeaderTools";
 
 interface NavBarProps {
   regionTeams: RegionTeam[];
@@ -13,6 +15,10 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = () => {
   const nflTabs = SharedData.nflTabs;
   const nbaTabs = SharedData.nbaTabs;
+  const ncaawTabs = SharedData.ncaawTabs;
+  const ncaamTabs = SharedData.ncaamTabs;
+  const nhlTabs = SharedData.nhlTabs;
+  const soccerTabs = SharedData.soccerTabs;
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName === activeTab ? null : tabName);
@@ -22,13 +28,28 @@ const NavBar: React.FC<NavBarProps> = () => {
 
   return (
     <div>
-      <nav className={styles.nav}>
+      <div className={styles.nav}>
         <h2 className={styles.logo}>
           <a className={styles.logolink} href="#">
             ESPN
           </a>
         </h2>
         <ul className={styles.ul}>
+          <li className={`${styles.li} ${styles.dropdown}`}>
+            <a
+              href="#"
+              className={styles.a}
+              onClick={() => handleTabClick("soccer")}
+            >
+              <span>
+                <span>Soccer</span>
+              </span>
+            </a>
+            <span className={styles.arrow}></span>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.soccer.items} />
+            </div>
+          </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
               href="#"
@@ -41,17 +62,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <div className={styles.anish}>
-                <ul className={styles.dropdownBox}>
-                  {nflTabs[0].subNavTabs.map((subTab, index) => (
-                    <li className={styles.dropdownBoxItem} key={index}>
-                      <a className={styles.dropdownBoxItemLink}>
-                        <span>{subTab.label}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <Dropdown items={SharedData.nfl.items} />
               <div className={styles.listWrapper}>
                 <ul className={styles.listWrapperUl}>
                   <li className={styles.dropdownBoxItem}>
@@ -90,13 +101,19 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
-            <a href="#" className={styles.a}>
+            <a
+              href="#"
+              className={styles.a}
+              onClick={() => handleTabClick("ncaam")}
+            >
               <span>
-                <span>NCAAF</span>
+                <span>NCAAM</span>
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.ncaam.items} />
+            </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
@@ -109,34 +126,42 @@ const NavBar: React.FC<NavBarProps> = () => {
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.nba.items} />
+            </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
-            <a href="#" className={styles.a}>
+            <a
+              href="#"
+              className={styles.a}
+              onClick={() => handleTabClick("nhl")}
+            >
               <span>
                 <span>NHL</span>
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.nfl.items} />
+            </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
-            <a href="#" className={styles.a}>
+            <a
+              href="#"
+              className={styles.a}
+              onClick={() => handleTabClick("ncaaw")}
+            >
               <span>
-                <span>MLB</span>
+                <span>NCAAW</span>
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.ncaaw.items} />
+            </div>
           </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
-            <a href="#" className={styles.a}>
-              <span>
-                <span>Soccer</span>
-              </span>
-            </a>
-            <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+          <li className={styles.floatright}>
+            <HeaderTools />
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
@@ -147,7 +172,9 @@ const NavBar: React.FC<NavBarProps> = () => {
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.fantasy.items} />
+            </div>
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
@@ -158,7 +185,9 @@ const NavBar: React.FC<NavBarProps> = () => {
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.Watch.items} />
+            </div>
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
@@ -169,7 +198,9 @@ const NavBar: React.FC<NavBarProps> = () => {
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.espnbet.items} />
+            </div>
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
@@ -180,10 +211,12 @@ const NavBar: React.FC<NavBarProps> = () => {
               </span>
             </a>
             <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}></div>
+            <div className={styles.dropdownArrowContent}>
+              <Dropdown items={SharedData.espnplus.items} />
+            </div>
           </li>
         </ul>
-      </nav>
+      </div>
       {activeTab === "nfl" &&
         nflTabs.map((tab, index) => (
           <SubNavBar
@@ -195,6 +228,42 @@ const NavBar: React.FC<NavBarProps> = () => {
         ))}
       {activeTab === "nba" &&
         nbaTabs.map((tab, index) => (
+          <SubNavBar
+            key={index}
+            logoSrc={tab.logoSrc}
+            title={tab.title}
+            subNavTabs={tab.subNavTabs}
+          />
+        ))}
+      {activeTab === "ncaam" &&
+        ncaamTabs.map((tab, index) => (
+          <SubNavBar
+            key={index}
+            logoSrc={tab.logoSrc}
+            title={tab.title}
+            subNavTabs={tab.subNavTabs}
+          />
+        ))}
+      {activeTab === "ncaaw" &&
+        ncaawTabs.map((tab, index) => (
+          <SubNavBar
+            key={index}
+            logoSrc={tab.logoSrc}
+            title={tab.title}
+            subNavTabs={tab.subNavTabs}
+          />
+        ))}
+      {activeTab === "nhl" &&
+        nhlTabs.map((tab, index) => (
+          <SubNavBar
+            key={index}
+            logoSrc={tab.logoSrc}
+            title={tab.title}
+            subNavTabs={tab.subNavTabs}
+          />
+        ))}
+      {activeTab === "soccer" &&
+        soccerTabs.map((tab, index) => (
           <SubNavBar
             key={index}
             logoSrc={tab.logoSrc}

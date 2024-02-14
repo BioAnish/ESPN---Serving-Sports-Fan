@@ -1,0 +1,33 @@
+.carouselContainer {
+  margin: 0 auto;
+  max-width: 1400px;
+  .scoreboard_content {
+    .scoreboard_dropdown_wrapper {
+      color: #48494a;
+      float: left;
+      min-width: 120px;
+      padding: 18px 7px 0 10px;
+      position: relative;
+    }
+    .scores_carousel {
+      height: 65px;
+      padding: 0;
+      background: #f1f2f3;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      .gameContainer {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: inherit;
+        white-space: nowrap;
+        transition: transform 0.3s ease;
+        .gameItem {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

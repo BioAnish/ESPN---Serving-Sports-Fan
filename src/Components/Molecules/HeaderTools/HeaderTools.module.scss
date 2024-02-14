@@ -1,0 +1,21 @@
+.tools {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  .search {
+    cursor: pointer;
+    img {
+      margin-top: 5px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+  .user {
+    cursor: pointer;
+    img {
+      margin-top: 5px;
+      height: 25px;
+      width: 40px;
+    }
+  }
+}

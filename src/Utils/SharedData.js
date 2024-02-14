@@ -77,6 +77,26 @@ const SharedData = {
       dateTime: "7:30 PM ET",
       network: "TNT",
     },
+    {
+      id: 5,
+      labelContent: "NBA",
+      teams: [
+        { abbreviation: "IND", logo: "lal.png", score: "27-21" },
+        { abbreviation: "NY", logo: "bos.png", score: "31-17" },
+      ],
+      dateTime: "7:30 PM ET",
+      network: "TNT",
+    },
+    {
+      id: 6,
+      labelContent: "NBA",
+      teams: [
+        { abbreviation: "IND", logo: "lal.png", score: "27-21" },
+        { abbreviation: "NY", logo: "bos.png", score: "31-17" },
+      ],
+      dateTime: "7:30 PM ET",
+      network: "TNT",
+    },
   ],
   ncaamGames: [
     {
@@ -98,6 +118,26 @@ const SharedData = {
       ],
       dateTime: "7:30 PM ET",
       network: "BTN",
+    },
+    {
+      id: 3,
+      labelContent: "NCAAM",
+      teams: [
+        { abbreviation: "TULN", logo: "lal.png", score: "12-8" },
+        { abbreviation: "SMU", logo: "bos.png", score: "13-7" },
+      ],
+      dateTime: "7:30 PM ET",
+      network: "ESPN2",
+    },
+    {
+      id: 4,
+      labelContent: "NCAAM",
+      teams: [
+        { abbreviation: "TULN", logo: "lal.png", score: "12-8" },
+        { abbreviation: "SMU", logo: "bos.png", score: "13-7" },
+      ],
+      dateTime: "7:30 PM ET",
+      network: "ESPN2",
     },
   ],
   nflGames: [
@@ -382,6 +422,207 @@ const SharedData = {
       ],
     },
   ],
+  ncaamTabs: [
+    {
+      logoSrc: "ncaam.png",
+      title: "NCAAM",
+      subNavTabs: [
+        { label: "Home", url: "/home" },
+        { label: "Scores", url: "/superbowl" },
+        { label: "Schedule", url: "/draft" },
+        { label: "Standings", url: "" },
+        { label: "Stats", url: "" },
+        { label: "Teams", url: "" },
+        { label: "Players", url: "" },
+        { label: "Daily Lines", url: "" },
+        { label: "Trade Deadline", url: "" },
+        { label: "All-Star Game", url: "" },
+        { label: "More", url: "" },
+      ],
+    },
+  ],
+  ncaawTabs: [
+    {
+      logoSrc: "ncaam.png",
+      title: "NCAAW",
+      subNavTabs: [
+        { label: "Home", url: "/home" },
+        { label: "Scores", url: "/superbowl" },
+        { label: "Schedule", url: "/draft" },
+        { label: "Standings", url: "" },
+        { label: "Stats", url: "" },
+        { label: "Teams", url: "" },
+        { label: "Players", url: "" },
+        { label: "Daily Lines", url: "" },
+        { label: "Trade Deadline", url: "" },
+        { label: "All-Star Game", url: "" },
+        { label: "More", url: "" },
+      ],
+    },
+  ],
+  nhlTabs: [
+    {
+      logoSrc: "nhl.png",
+      title: "NHL",
+      subNavTabs: [
+        { label: "Home", url: "/home" },
+        { label: "Scores", url: "/superbowl" },
+        { label: "Schedule", url: "/draft" },
+        { label: "Standings", url: "" },
+        { label: "Stats", url: "" },
+        { label: "Teams", url: "" },
+        { label: "Players", url: "" },
+        { label: "Daily Lines", url: "" },
+        { label: "Trade Deadline", url: "" },
+        { label: "All-Star Game", url: "" },
+        { label: "More", url: "" },
+      ],
+    },
+  ],
+  soccerTabs: [
+    {
+      logoSrc: "soccer.png",
+      title: "SOCCER",
+      subNavTabs: [
+        { label: "Home", url: "/home" },
+        { label: "Scores", url: "/superbowl" },
+        { label: "Schedule", url: "/draft" },
+        { label: "Tables", url: "" },
+        { label: "Transfers", url: "" },
+        { label: "Teams", url: "" },
+        { label: "USWNT", url: "" },
+        { label: "USMNT", url: "" },
+        { label: "Leagues & Cups", url: "" },
+      ],
+    },
+  ],
+  nfl: {
+    items: [
+      "Home",
+      "Super Bowl",
+      "Draft",
+      "Scores",
+      "Schedule",
+      "Standing",
+      "Stats",
+      "Teams",
+      "Deapth Charts",
+    ],
+  },
+  nba: {
+    items: [
+      "Home",
+      "Scores",
+      "Schedule",
+      "Standings",
+      "Stats",
+      "Teams",
+      "Players",
+      "Daily Lines",
+      "Trade Deadline",
+    ],
+  },
+  ncaam: {
+    items: [
+      "Home",
+      "Scores",
+      "Schedule",
+      "Standings",
+      "Stats",
+      "Teams",
+      "Rankings",
+      "Recruting",
+      "Bracketology",
+    ],
+  },
+  ncaaw: {
+    items: [
+      "Home",
+      "Scores",
+      "Schedule",
+      "Standings",
+      "Stats",
+      "Teams",
+      "Rankings",
+      "Recruting",
+      "NCAA Tournament Dates",
+    ],
+  },
+  nhl: {
+    items: [
+      "Home",
+      "Scores",
+      "Schedule",
+      "Standings",
+      "Stats",
+      "Teams",
+      "Daily Lines",
+      "How To Watch NHL Games",
+      "Fantasy Hockey",
+    ],
+  },
+  espnplus: {
+    items: [
+      "Features",
+      "Originals",
+      "Browse",
+      "Schedule & Replays",
+      "Articles",
+      "Tools",
+      "Support & FAQs",
+    ],
+  },
+  espnbet: {
+    items: ["ESPN BET", "Sports Betting", "What is ESPN BET?"],
+  },
+  Watch: {
+    items: [
+      "Home",
+      "Originals",
+      "Browse",
+      "Schedule & Replays",
+      "Support & FAQs",
+      "Apps",
+      "Don't Have ESPN?",
+    ],
+  },
+  fantasy: {
+    items: [
+      "Fantasy Home",
+      "Men's Basketball",
+      "Sign Up: Men's Basketball",
+      "Baseball",
+      "Sign Up: Fantasy Baseball",
+      "Hockey",
+      "Sign Up: Fantasy Hockey",
+      "Women's Basketball",
+      "Sign Up: Women's Basketball",
+      "Football",
+      "Pigskin Bracket Challenge",
+      "Games Home",
+    ],
+  },
+  soccer: {
+    items: [
+      "Home",
+      "Scores",
+      "Schedule",
+      "Transfers",
+      "AFCON",
+      "Asian Cup",
+      "Teams",
+      "USWNT",
+      "USMNT",
+    ],
+  },
+  topevent: {
+    items: [
+      "NBA",
+      "NCAAM",
+      "NFL",
+      "NHL"
+    ],
+  }
 };
 
 export default SharedData;

@@ -1,20 +1,27 @@
 import Card from "@/Components/Atoms/Card/Card";
-import CardWithLinkAction from "@/Components/Atoms/CardWithLinkAction/CardWithLinkAction";
+import CardWithLinkAction from "@/Components/Molecules/CardWithLinkAction/CardWithLinkAction";
 import SharedData from "../Utils/SharedData";
-import NavBar from "@/Components/Atoms/NarBar/NavBar";
-import HeadlineCard from "@/Components/Atoms/HeadlineCard/HeadlineCard";
-import HeadlineTopCard from "@/Components/Atoms/HeadlineCard/HeadlineTopCard/HeadlineTopCard";
-import HeadlineRightCard from "@/Components/Atoms/HeadlineCard/HeadlineRightCard/HeadlineRightCard";
+import NavBar from "@/Components/Molecules/NarBar/NavBar";
+import HeadlineCard from "@/Components/Molecules/HeadlineCard/HeadlineCard";
+import HeadlineTopCard from "@/Components/Molecules/HeadlineCard/HeadlineTopCard/HeadlineTopCard";
+import HeadlineRightCard from "@/Components/Molecules/HeadlineCard/HeadlineRightCard/HeadlineRightCard";
 import styles from "./page.module.css";
-import HeadlineBottomCard from "@/Components/Atoms/HeadlineCard/HeadlineBottomCard/HeadlineBottomCard";
-import Scoreboard from "@/Components/Atoms/Scoreboard/Scoreboard";
-import HeaderCarousel from "@/Components/Atoms/HeaderCarousel/HeaderCarousel";
-import SubNavBar from "@/Components/Atoms/NarBar/SubNavBar/SubNavBar";
+import HeadlineBottomCard from "@/Components/Molecules/HeadlineCard/HeadlineBottomCard/HeadlineBottomCard";
+import Scoreboard from "@/Components/Molecules/Scoreboard/Scoreboard";
+import HeaderCarousel from "@/Components/Molecules/HeaderCarousel/HeaderCarousel";
+import SubNavBar from "@/Components/Molecules/NarBar/SubNavBar/SubNavBar";
 import Button from "@/Components/Atoms/Button/Button";
+import Dropdown from "@/Components/Atoms/DropdownMenu/DropdownMenu";
+import SportScorecard from "@/Components/Molecules/SportScorecard/SportScorecard";
+import NflHomePage from "@/Components/Views/Nfl/NflHomePage/NflHomePage";
+import MiniCardCarousel from "@/Components/Molecules/MiniCardCarousel/MiniCardCarousel";
 
 export default function Home() {
   return (
     <main>
+      <HeaderCarousel />
+      <NavBar regionTeams={[]} />
+      {/* <NflHomePage/> */}
       {/* <div className={styles.navbar}>
       <NavBarClient/>
       </div>
@@ -43,8 +50,8 @@ export default function Home() {
       <Scoreboard games={SharedData.nbaGames}/>
       <Scoreboard games={SharedData.ncaamGames} />
       </div> */}
-      {/* <HeaderCarousel />
-      <div className={styles.navbar}>
+      {/* <HeaderCarousel /> */}
+      {/* <div className={styles.navbar}>
         <NavBar regionTeams={[]} />
       </div> */}
       {/* <Card backgroundColor="#f9f9fb">
@@ -60,11 +67,13 @@ export default function Home() {
       <Card>
         <HeadlineRightCard></HeadlineRightCard>
       </Card> */}
-      <div className={styles.buttonContainer}>
+      {/* <div className={styles.buttonContainer}>
       <Button>Sign Up</Button>
       <Button variant="secondary">Log In</Button>
       <Button variant="yellow" iconPath="espnplus.svg">Get</Button>
-      </div>
+      </div> */}
+      {/* <SportScorecard/> */}
+      {/* <MiniCardCarousel/> */}
     </main>
   );
 } 

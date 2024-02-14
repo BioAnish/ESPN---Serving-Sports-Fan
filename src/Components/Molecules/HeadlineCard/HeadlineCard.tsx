@@ -1,7 +1,7 @@
 // HeadlineCard.tsx
 import React, { ReactNode } from "react";
 import style from "./HeadlineCard.module.scss";
-import Card from "../Card/Card";
+import Card from "../../Atoms/Card/Card";
 
 interface HeadlineCardProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface HeadlineCardProps {
 
 const HeadlineCard: React.FC<HeadlineCardProps> = ({ children }) => {
   return (
-    <div>
+    <div className={style.headlineCard}>
       <Card>
         <div className={style.contentItem__header__wrapper}>
           <div className={style.contentItem__logo}>

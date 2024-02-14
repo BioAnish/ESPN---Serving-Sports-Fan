@@ -1,0 +1,91 @@
+.navBar {
+  position: relative;
+  border-radius: 1px;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
+  background: #fff;
+
+  .navSecondary {
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1400px;
+    position: relative;
+
+    .divider {
+      width: 2px;
+      height: 44px;
+      background: #cbccce;
+    }
+
+    .sportsLogo {
+      cursor: pointer;
+      line-height: 44px;
+
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          height: 30px;
+          width: 30px;
+        }
+
+        span {
+          font-weight: 800;
+          color: #2b2c2d;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .navigationTab {
+      ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style: none;
+          color: #2b2c2d;
+          font-size: 13px;
+          font-weight: 400;
+          position: relative;
+          display: inline-block;
+          line-height: 44px;
+          cursor: pointer;
+
+          a {
+            padding: 0 10px;
+            text-decoration: none;
+
+            &:before {
+              background-color: transparent;
+              bottom: 0;
+              content: "";
+              height: 4px;
+              left: 0;
+              position: absolute;
+              right: 0;
+              transition: background-color 0.3s ease;
+              /* Added transition for smooth color change */
+            }
+          }
+
+          &:hover a:before,
+          &.active a:before {
+            /* Use .active class to show indicator for clicked item */
+            background-color: #d00;
+          }
+
+          &:hover + li a:before,
+          &.active + li a:before {
+            /* Remove indicator from previous item */
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
