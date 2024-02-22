@@ -3,11 +3,14 @@
 import React, { useState } from "react";
 import style from "./SubNavBar.module.scss";
 import { SubNavTab } from "./SubNavBar.types";
+import SharedData from "@/Utils/SharedData";
+import DropdownMenu from "@/Components/Atoms/DropdownMenu/DropdownMenu";
+import { usePathname } from "next/navigation";
 
 interface SubNavBarProps {
   logoSrc: string;
   title: string;
-  subNavTabs: SubNavTab[]; // Using the SubNavTab interface for defining subNavTabs
+  subNavTabs: SubNavTab[];
 }
 
 const SubNavBar: React.FC<SubNavBarProps> = ({
@@ -15,11 +18,11 @@ const SubNavBar: React.FC<SubNavBarProps> = ({
   title,
   subNavTabs,
 }) => {
-  const [activeItem, setActiveItem] = useState<number | null>(null);
-
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const handleItemClick = (index: number) => {
-    setActiveItem(index === activeItem ? null : index);
+    setActiveIndex(index);
   };
+  const path = usePathname()
   return (
     <div>
       <nav className={style.navBar}>
@@ -32,12 +35,78 @@ const SubNavBar: React.FC<SubNavBarProps> = ({
           </div>
           <div className={style.divider}></div>
           <div className={style.navigationTab}>
-            <ul>
+            <ul className={style.navigationTab__ul}>
               {subNavTabs.map((tab, index) => (
-                <li key={index} onClick={() => handleItemClick(index)}>
-                  <a className={index === activeItem ? style.active : ""}>
+                <li
+                  className={style.navigationTab__li}
+                  key={index}
+                  onClick={() => handleItemClick(index)}
+                >
+                  <a href={tab.url} className={`${style.navigationTab__label} ${path === tab.url ? style.active : ''}`}>
                     {tab.label}
                   </a>
+                  {(tab.label === "Tables" ||
+                    tab.label === "Teams" ||
+                    tab.label === "Transfers" ||
+                    tab.label === "Leagues & Cups" ||
+                    tab.label === "More") && (
+                    <span className={style.dropdownArrow}></span>
+                  )}
+                  {tab.label === "Tables" && (
+                    <div className={style.dropdownArrowContent}>
+                      <DropdownMenu
+                        items={
+                          SharedData.soccerTabs[0].subNavTabs.find(
+                            (subTab) => subTab.type === "tables"
+                          )!.subtypes
+                        }
+                      />
+                    </div>
+                  )}
+                  {tab.label === "Teams" && (
+                    <div className={style.dropdownArrowContent}>
+                      <DropdownMenu
+                        items={
+                          SharedData.soccerTabs[0].subNavTabs.find(
+                            (subTab) => subTab.type === "teams"
+                          )!.subtypes
+                        }
+                      />
+                    </div>
+                  )}
+                  {tab.label === "Transfers" && (
+                    <div className={style.dropdownArrowContent}>
+                      <DropdownMenu
+                        items={
+                          SharedData.soccerTabs[0].subNavTabs.find(
+                            (subTab) => subTab.type === "transfers"
+                          )!.subtypes
+                        }
+                      />
+                    </div>
+                  )}
+                  {tab.label === "Leagues & Cups" && (
+                    <div className={style.dropdownArrowContent}>
+                      <DropdownMenu
+                        items={
+                          SharedData.soccerTabs[0].subNavTabs.find(
+                            (subTab) => subTab.type === "leagues_cups"
+                          )!.subtypes
+                        }
+                      />
+                    </div>
+                  )}
+                  {tab.label === "More" && (
+                    <div className={style.dropdownArrowContent}>
+                      <DropdownMenu
+                        items={
+                          SharedData.soccerTabs[0].subNavTabs.find(
+                            (subTab) => subTab.type === "more"
+                          )!.subtypes
+                        }
+                      />
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

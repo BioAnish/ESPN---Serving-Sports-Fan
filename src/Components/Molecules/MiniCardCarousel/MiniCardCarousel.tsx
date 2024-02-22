@@ -62,25 +62,60 @@ const MiniCardCarousel = () => {
         swipeable
       >
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
         <div>
-          <HeadlineTopCard></HeadlineTopCard>
+          <HeadlineTopCard
+            imageUrl="https://a.espncdn.com/photo/2024/0219/r1293324_1296x518_5-2.jpg"
+            title="Why Mbappé is finally leaving PSG for Real Madrid: Piecing together football's longest transfer saga"
+            hour="11h"
+            name="Alex Kirkland, Julien Laurens"
+          ></HeadlineTopCard>
         </div>
       </Carousel>
     </div>

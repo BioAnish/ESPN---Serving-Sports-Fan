@@ -187,6 +187,7 @@ const SharedData = {
   regionTeams: [
     {
       leagueTitle: "AFC East",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Buffalo Bills",
@@ -212,6 +213,7 @@ const SharedData = {
     },
     {
       leagueTitle: "AFC North",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Baltimore Ravens",
@@ -237,6 +239,7 @@ const SharedData = {
     },
     {
       leagueTitle: "AFC South",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Houston Texans",
@@ -262,6 +265,7 @@ const SharedData = {
     },
     {
       leagueTitle: "AFC West",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Denver Broncos",
@@ -287,6 +291,7 @@ const SharedData = {
     },
     {
       leagueTitle: "NFC East",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Dallas Cowboys",
@@ -312,6 +317,7 @@ const SharedData = {
     },
     {
       leagueTitle: "NFC North",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Chicago Bears",
@@ -337,6 +343,7 @@ const SharedData = {
     },
     {
       leagueTitle: "NFC South",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Atlanta Falcons",
@@ -362,6 +369,7 @@ const SharedData = {
     },
     {
       leagueTitle: "NFC West",
+      sportType: "NFL",
       teamNames: [
         {
           teamName: "Arizona Cardinals",
@@ -384,6 +392,58 @@ const SharedData = {
             "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png&h=50&w=50",
         },
       ],
+    },
+    {
+      leagueTitle: "Top Leagues",
+      sportType: "Soccer",
+      teamNames: [
+        {
+          teamName: "Premier League",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/23.png&w=50&h=50&transparent=true"
+        },
+        {
+          teamName: "Champions League",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/2.png&w=50&h=50&transparent=true"
+        },
+        {
+          teamName: "LALIGA",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/15.png&w=50&h=50&transparent=true"
+        },
+        {
+          teamName: "Bundesliga",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/10.png&transparent=true&w=30&h=30"
+        }
+      ]
+    },
+    {
+      leagueTitle: "Top Teams",
+      sportType: "Soccer",
+      teamNames: [
+        {
+          teamName: "USMNT",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/660.png&w=50&h=50"
+        },
+        {
+          teamName: "USWNT",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/660.png&w=50&h=50"
+        },
+        {
+          teamName: "Arsenal",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/359.png&w=50&h=50"
+        },
+        {
+          teamName: "PSG",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/160.png&w=50&h=50"
+        },
+        {
+          teamName: "Liverpool",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/364.png&w=50&h=50"
+        },
+        {
+          teamName: "Manchester City",
+          logoUrl: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&w=50&h=50"
+        }
+      ]
     },
   ],
   nflTabs: [
@@ -481,20 +541,22 @@ const SharedData = {
   ],
   soccerTabs: [
     {
-      logoSrc: "soccer.png",
+      logoSrc: "/soccer.png",
       title: "SOCCER",
       subNavTabs: [
-        { label: "Home", url: "/home" },
-        { label: "Scores", url: "/superbowl" },
-        { label: "Schedule", url: "/draft" },
-        { label: "Tables", url: "" },
-        { label: "Transfers", url: "" },
-        { label: "Teams", url: "" },
-        { label: "USWNT", url: "" },
-        { label: "USMNT", url: "" },
-        { label: "Leagues & Cups", url: "" },
-      ],
-    },
+        { label: "Home", url: "/Soccer/SoccerHome", type: "home" },
+        { label: "Scores", url: "/Soccer/SoccerScore", type: "scores" },
+        { label: "Schedule", url: "/Soccer/SoccerSchedule", type: "schedule" },
+        { label: "Tables", url: "/Soccer/SoccerTable", type: "tables", subtypes: ["Series A", "Ligue 1", "Europa League", "Premier League"]}, // Specifies this tab represents tables
+        { label: "Transfers", url: "/Soccer/SoccerTransfer", type: "transfers", subtypes: ["Transfers news and features", "Latest major transfers"] },
+        { label: "Teams", url: "/Soccer/SoccerTeam", type: "teams", subtypes: ["Arsenal", "Manchester City", "Liverpool", "PSG", "Real Madrid"]}, // Specifies this tab represents teams
+        { label: "USWNT", url: "/Soccer/Team", type: "uswnt" },
+        { label: "USMNT", url: "", type: "usmnt" },
+        { label: "Leagues & Cups", url: "", type: "leagues_cups", subtypes: ["Series A", "Ligue 1", "Europa League", "Premier League"] },
+        { label: "Subscribe to ESPN+", url:"", type:"Subscribe to ESPN+"},
+        { label: "More", url: "", type: "more", subtypes: ["Women's World Cup", "Men's Worls Cup", "Tickets"] }
+      ]      
+    }
   ],
   nfl: {
     items: [
@@ -596,10 +658,10 @@ const SharedData = {
       "Hockey",
       "Sign Up: Fantasy Hockey",
       "Women's Basketball",
-      "Sign Up: Women's Basketball",
-      "Football",
-      "Pigskin Bracket Challenge",
-      "Games Home",
+      // "Sign Up: Women's Basketball",
+      // "Football",
+      // "Pigskin Bracket Challenge",
+      // "Games Home",
     ],
   },
   soccer: {
@@ -622,7 +684,164 @@ const SharedData = {
       "NFL",
       "NHL"
     ],
-  }
+  },
+  soccerNewsCard: [
+    {
+      imgUrl:"https://a.espncdn.com/combiner/i?img=/photo/2024/0220/r1293476_1296x729_16-9.jpg&h=120",
+      title:"Transfer Talk: Man Utd, Liverpool eye €40m-rated Éderson",
+      subTitle:"Atalanta midfielder Éderson, 24, is reportedly a transfer target for Man United, Liverpool and several other Premier League clubs. Transfer Talk has the latest.",
+      hour:"1h",
+      author:"ESPN"
+    },
+    {
+      imgUrl:"https://a.espncdn.com/redesign/assets/img/logos/espn-black@2x.png",
+      title:"MLSPA slams use of replacement refs as 'step backward'",
+      subTitle:"The MLS Players Association on Tuesday urged a quick resolution to the lockout of the league's referees and cautioned that the use of replacement game officials during the labor dispute could jeopardize the health of players.",
+      hour:"28m",
+      author:"Reuters"
+    },
+    {
+      imgUrl:"https://a.espncdn.com/combiner/i?img=/photo/2024/0220/r1293784_1296x729_16-9.jpg&h=120",
+      title:"Haaland fires Manchester City to within 1 point of PL lead",
+      subTitle:"Erling Haaland erased any questions about his scoring touch on Tuesday, netting Manchester City's only goal in a 1-0 victory over Brentford that lifted them into second place in the Premier League table, just one point behind leaders Liverpool.",
+      hour:"1h",
+      author:"Reuters"
+    },
+  ],
+  topics: [
+    {
+      href: "https://www.example.com",
+      iconSrc:
+        "https://a2.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F23.png&w=60&h=60&scale=crop&cquality=80&location=origin",
+      altText: "Icon 1",
+      quickListDetailsName: "Premier League",
+    },
+    {
+      href: "https://www.example2.com",
+      iconSrc:
+        "https://a3.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2.png&w=60&h=60&scale=crop&cquality=80&location=origin",
+      altText: "Icon 2",
+      quickListDetailsName: "Champions League",
+    },
+    {
+      href: "https://www.example2.com",
+      iconSrc:
+        "https://a2.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F19.png&w=60&h=60&scale=crop&cquality=80&location=origin",
+      altText: "Icon 3",
+      quickListDetailsName: "MLS",
+    },
+    {
+      href: "https://www.example2.com",
+      iconSrc:
+        "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F15.png&w=60&h=60&scale=crop&cquality=80&location=origin",
+      altText: "Icon 4",
+      quickListDetailsName: "LaLiga",
+    },
+    {
+      href: "https://www.example2.com",
+      iconSrc:
+        "https://a.espncdn.com/combiner/i?img=%2Fredesign%2Fassets%2Fimg%2Ficons%2FESPN%2Dicon%2Dsoccer.png&w=80&h=80&scale=crop&cquality=40&location=origin",
+      altText: "Icon 5",
+      quickListDetailsName: "Transfer Talk",
+    },
+  ],
+  espnPlus: [
+    {
+      href: "https://www.example.com",
+      iconSrc:
+        "https://a1.espncdn.com/combiner/i?img=%252Fi%252Fmobile%252Fwebsite%252Fimg%252Fespn_app_72@2x.png&w=60&h=60&scale=crop&cquality=80&location=origin",
+      altText: "Icon 1",
+      quickListDetailsName: "Live & Upcoming Games",
+    },
+  ],
+  soccerHeadlines: [
+    {
+      headline: "Bayern boss Tuchel to leave at end of season",
+    },
+    {
+      headline: "Ratcliffe: I want to knock rivals 'off their perch'"
+    },
+    {
+      headline: "Moultrie, Morgan score in USWNT Gold Cup rout"
+    },
+    {
+      headline: "Griezmann: I'll do everything to play at Olympics"
+    },
+    {
+      headline: "Pep says Haaland silenced critics with City winner"
+    },
+    {
+      headline: "MLSPA slams replacement refs as step backward"
+    },
+    {
+      headline: "De Jong slams 'lies' over salary, Barça future"
+    },
+    {
+      headline: "Brazil boss backtracks on doubts about Neymar"
+    },
+  ],
+  soccerScoreBoardMatches: [
+    {
+      "imageurlHome": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&h=60&w=60",
+      "imageurlAway": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/337.png&h=60&w=60",
+      "homeTeam": "Man City",
+      "awayTeam": "Brentford",
+      "homeTeamScore": 1,
+      "awayTeamScore": 0,
+      "leagueTitle": "2023-24 English Premier League",
+      "fullTimeResult": "FT"
+    },
+    {
+      "imageurlHome": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&h=60&w=60",
+      "imageurlAway": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/337.png&h=60&w=60",
+      "homeTeam": "Man City",
+      "awayTeam": "Brentford",
+      "homeTeamScore": 3,
+      "awayTeamScore": 2,
+      "leagueTitle": "2023-24 English Premier League",
+      "fullTimeResult": "FT"
+    },
+    {
+      "imageurlHome": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&h=60&w=60",
+      "imageurlAway": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/337.png&h=60&w=60",
+      "homeTeam": "Man City",
+      "awayTeam": "Brentford",
+      "homeTeamScore": 3,
+      "awayTeamScore": 3,
+      "leagueTitle": "2023-24 English Premier League",
+      "fullTimeResult": "FT"
+    },
+    {
+      "imageurlHome": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&h=60&w=60",
+      "imageurlAway": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/337.png&h=60&w=60",
+      "homeTeam": "Man City",
+      "awayTeam": "Brentford",
+      "homeTeamScore": 2,
+      "awayTeamScore": 1,
+      "leagueTitle": "2023-24 English Premier League",
+      "fullTimeResult": "FT"
+    },
+    {
+      "imageurlHome": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&h=60&w=60",
+      "imageurlAway": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/337.png&h=60&w=60",
+      "homeTeam": "Man City",
+      "awayTeam": "Brentford",
+      "homeTeamScore": 1,
+      "awayTeamScore": 2,
+      "leagueTitle": "2023-24 English Premier League",
+      "fullTimeResult": "FT"
+    },
+    {
+      "imageurlHome": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png&h=60&w=60",
+      "imageurlAway": "https://a1.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/337.png&h=60&w=60",
+      "homeTeam": "Man City",
+      "awayTeam": "Brentford",
+      "homeTeamScore": 0,
+      "awayTeamScore": 0,
+      "leagueTitle": "2023-24 English Premier League",
+      "fullTimeResult": "FT"
+    },
+  ]
 };
 
 export default SharedData;

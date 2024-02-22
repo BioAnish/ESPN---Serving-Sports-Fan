@@ -46,7 +46,12 @@
         line-height: 16px;
         color: #6c6d6f;
         margin: 0;
+        padding-bottom: 15px;
       }
+    }
+    .card:not(:first-child) {
+      padding-top: 15px;
+      border-top: thin solid #dcdddf;
     }
   }
 }

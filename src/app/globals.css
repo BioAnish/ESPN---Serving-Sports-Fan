@@ -16,6 +16,11 @@ body {
     padding: 0;
     margin: 0;
   }
+  a{
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+  }
 }
 
 code {

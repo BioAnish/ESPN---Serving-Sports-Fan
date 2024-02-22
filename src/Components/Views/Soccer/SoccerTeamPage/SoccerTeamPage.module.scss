@@ -1,0 +1,110 @@
+.TeamsWrapper {
+  display: flex;
+  flex-direction: column;
+  .TeamsWrapper__header {
+    display: flex;
+    justify-content: space-between;
+    .headline {
+      font-size: 28px;
+      font-weight: 800;
+      color: #2b2c2d;
+      margin: 0;
+    }
+    .card__dropdown {
+      background-color: #fbfbfb;
+      border: 1px solid #cbccce;
+      border-radius: 40px;
+      display: inline-block;
+      position: relative;
+      z-index: 0;
+      &:hover {
+        background-color: #fff;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        border: solid #06c;
+        border-width: 0 1px 1px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+        margin-left: 14px;
+        top: 33%;
+        right: 10px;
+      }
+      .card__dropdown__select {
+        text-overflow: ellipsis;
+        appearance: none;
+        background-color: initial;
+        border: 0;
+        cursor: pointer;
+        font-size: 12px;
+        height: 30px;
+        line-height: normal;
+        padding: 0 30px 0 15px;
+        text-transform: none;
+        color: #2b2c2d;
+      }
+    }
+  }
+  .Teams__layout{
+    display: flex;
+    .Teams__layout__column{
+        padding-right: 6px;
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+        &:first-child{
+            margin-right: 20px;
+        }
+        .ContentList{
+            margin-top: 12px!important;
+            .ContentList__Item{
+                padding: 4px 0;
+                &:first-child {
+                    padding-top: 0;
+                }
+                .TeamLinks{
+                    display: flex;
+                    align-items: center;
+                    a {
+                        img{
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+                    .Teamname{
+                        padding-left: 8px;
+                        .AnchorLink{
+                            h2{
+                                color: #151617;
+                                font-weight: 600;
+                                line-height: 21px;
+                                font-size: 16px;
+                                margin: 0;
+                            }
+                        }
+                        .TeamLinks__Links{
+                            .TeamLinks__Link{
+                                font-size: 11px;
+                                line-height: 13px;
+                                font-weight: 400;
+                                a{
+                                    color: #06c;
+                                    &:hover {
+                                        color: #004d9a;
+                                    }
+                                }
+                                &:last-child:before {
+                                    color: #dcdddf;
+                                    content: " | ";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
+}

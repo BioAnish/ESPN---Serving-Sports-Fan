@@ -1,0 +1,25 @@
+.pageLayout {
+  background: #edeef0;
+  padding: 0 10px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  max-width: 1160px;
+  width: 100%;
+  padding-top: 20px;
+  .col_one {
+    width: 220px;
+  }
+  .col_two {
+    width: 660px;
+  }
+  .col_three {
+  }
+}
+.footer {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 10px;
+}

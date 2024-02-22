@@ -2,39 +2,50 @@
 import React, { ReactNode } from "react";
 import style from "./HeadlineCard.module.scss";
 import Card from "../../Atoms/Card/Card";
+import { IHeadlineCardProps } from "./HeadlineCard.types";
 
 interface HeadlineCardProps {
   children: ReactNode;
 }
 
-const HeadlineCard: React.FC<HeadlineCardProps> = ({ children }) => {
+const HeadlineCard = ({
+  imageUrl,
+  title,
+  subTitle,
+  bottomTitle,
+  bottomSubTitle,
+  bottomDescription,
+  children,
+}: IHeadlineCardProps) => {
   return (
     <div className={style.headlineCard}>
       <Card>
         <div className={style.contentItem__header__wrapper}>
           <div className={style.contentItem__logo}>
-            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nba.png&w=288&h=288&transparent=true"></img>
+            <img src={imageUrl}></img>
           </div>
           <div className={style.contentItem__header__headings}>
-            <h2>NBA TRADE DEADLINE</h2>
-            <h3>FEB. 8</h3>
+            <h2>{title}</h2>
+            <h3>{subTitle}</h3>
           </div>
         </div>
         {children}
-        <div className={style.headlineStack}>
-          <div className={style.headlineStack__listContainer}>
-            <ul className={style.headlineStack__list}>
-              <li>
-                <a>Trade deadline: Latest buzz, news and reports</a>
-              </li>
-            </ul>
-            <ul className={style.headlineStack__list}>
-              <li>
-                <a>Trade tracker: Grades, details for every deal</a>
-              </li>
-            </ul>
+        {bottomDescription && (
+          <div className={style.headlineStack}>
+            <div className={style.headlineStack__listContainer}>
+              <ul className={style.headlineStack__list}>
+                <li>
+                  <a>{bottomTitle}</a>
+                </li>
+              </ul>
+              <ul className={style.headlineStack__list}>
+                <li>
+                  <a>{bottomSubTitle}</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        )}
       </Card>
     </div>
   );

@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./NavBar.module.scss";
 import SubNavBar from "./SubNavBar/SubNavBar";
 import { RegionTeam, Tab, Team } from "./NavBar.types";
 import SharedData from "@/Utils/SharedData";
-import Dropdown from "../../Atoms/DropdownMenu/DropdownMenu";
+import DropdownMenu from "../../Atoms/DropdownMenu/DropdownMenu";
 import HeaderTools from "@/Components/Molecules/HeaderTools/HeaderTools";
+import { usePathname } from "next/navigation";
 
 interface NavBarProps {
   regionTeams: RegionTeam[];
@@ -20,25 +21,26 @@ const NavBar: React.FC<NavBarProps> = () => {
   const nhlTabs = SharedData.nhlTabs;
   const soccerTabs = SharedData.soccerTabs;
   const [activeTab, setActiveTab] = useState<string | null>(null);
+  const path = usePathname()
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName === activeTab ? null : tabName);
   };
   const { regionTeams } = SharedData;
   const tabs: Tab[] = SharedData.nflTabs;
-
+  
   return (
     <div>
       <div className={styles.nav}>
         <h2 className={styles.logo}>
-          <a className={styles.logolink} href="#">
+          <a className={styles.logolink}>
             ESPN
           </a>
         </h2>
         <ul className={styles.ul}>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
-              href="#"
-              className={styles.a}
+              href="/Soccer"
+              className={`${styles.tab__link} ${path === "/Soccer" ? styles.active : ''}`}
               onClick={() => handleTabClick("soccer")}
             >
               <span>
@@ -47,28 +49,16 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.soccer.items} />
-            </div>
-          </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
-            <a
-              href="#"
-              className={styles.a}
-              onClick={() => handleTabClick("nfl")}
-            >
-              <span>
-                <span>NFL</span>
-              </span>
-            </a>
-            <span className={styles.arrow}></span>
-            <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.nfl.items} />
+              <DropdownMenu items={SharedData.soccer.items} />
               <div className={styles.listWrapper}>
                 <ul className={styles.listWrapperUl}>
                   <li className={styles.dropdownBoxItem}>
                     <div className={styles.submenuWrapper}>
-                      {regionTeams.map(
-                        (regionTeam: RegionTeam, index: number) => (
+                      {regionTeams
+                        .filter(
+                          (regionTeam) => regionTeam.sportType === "Soccer"
+                        )
+                        .map((regionTeam: RegionTeam, index: number) => (
                           <ul key={index}>
                             <li className={styles.conference}>
                               <span>{regionTeam.leagueTitle}</span>
@@ -92,8 +82,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                               )
                             )}
                           </ul>
-                        )
-                      )}
+                        ))}
                     </div>
                   </li>
                 </ul>
@@ -102,8 +91,58 @@ const NavBar: React.FC<NavBarProps> = () => {
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
-              href="#"
-              className={styles.a}
+               href="/Soccer"
+              className={styles.tab__link}
+              onClick={() => handleTabClick("nfl")}
+            >
+              <span>
+                <span>NFL</span>
+              </span>
+            </a>
+            <span className={styles.arrow}></span>
+            <div className={styles.dropdownArrowContent}>
+              <DropdownMenu items={SharedData.nfl.items} />
+              <div className={styles.listWrapper}>
+                <ul className={styles.listWrapperUl}>
+                  <li className={styles.dropdownBoxItem}>
+                    <div className={styles.submenuWrapper}>
+                      {regionTeams
+                        .filter((regionTeam) => regionTeam.sportType === "NFL")
+                        .map((regionTeam: RegionTeam, index: number) => (
+                          <ul key={index}>
+                            <li className={styles.conference}>
+                              <span>{regionTeam.leagueTitle}</span>
+                            </li>
+                            {regionTeam.teamNames.map(
+                              (team: Team, teamIndex: number) => (
+                                <li className={styles.team} key={teamIndex}>
+                                  <a>
+                                    <img
+                                      className={styles.nav_logo_wrap}
+                                      src={team.logoUrl}
+                                      alt={`${team.teamName} Logo`}
+                                    />
+                                    <div>
+                                      <span className={styles.link_text}>
+                                        {team.teamName}
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        ))}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li className={`${styles.li} ${styles.dropdown}`}>
+            <a
+              href="/Soccer"
+              className={styles.tab__link}
               onClick={() => handleTabClick("ncaam")}
             >
               <span>
@@ -112,13 +151,13 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.ncaam.items} />
+              <DropdownMenu items={SharedData.ncaam.items} />
             </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
-              href="#"
-              className={styles.a}
+              href="/Soccer"
+              className={styles.tab__link}
               onClick={() => handleTabClick("nba")}
             >
               <span>
@@ -127,13 +166,13 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.nba.items} />
+              <DropdownMenu items={SharedData.nba.items} />
             </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
-              href="#"
-              className={styles.a}
+              href="/Soccer"
+              className={styles.tab__link}
               onClick={() => handleTabClick("nhl")}
             >
               <span>
@@ -142,13 +181,13 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.nfl.items} />
+              <DropdownMenu items={SharedData.nfl.items} />
             </div>
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
-              href="#"
-              className={styles.a}
+              href="/Soccer"
+              className={styles.tab__link}
               onClick={() => handleTabClick("ncaaw")}
             >
               <span>
@@ -157,7 +196,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.ncaaw.items} />
+              <DropdownMenu items={SharedData.ncaaw.items} />
             </div>
           </li>
           <li className={styles.floatright}>
@@ -166,53 +205,53 @@ const NavBar: React.FC<NavBarProps> = () => {
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
           >
-            <a href="#" className={styles.a}>
+            <a href="#" className={styles.tab__link}>
               <span>
                 <span>Fantasy</span>
               </span>
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.fantasy.items} />
+              <DropdownMenu items={SharedData.fantasy.items} />
             </div>
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
           >
-            <a href="#" className={styles.a}>
+            <a href="#" className={styles.tab__link}>
               <span>
                 <span>Watch</span>
               </span>
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.Watch.items} />
+              <DropdownMenu items={SharedData.Watch.items} />
             </div>
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
           >
-            <a href="#" className={styles.a}>
+            <a href="#" className={styles.tab__link}>
               <span className={styles.espnbet}>
                 {/* <span>ESPNBET</span> */}
               </span>
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.espnbet.items} />
+              <DropdownMenu items={SharedData.espnbet.items} />
             </div>
           </li>
           <li
             className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
           >
-            <a href="#" className={styles.a}>
+            <a href="#" className={styles.tab__link}>
               <span className={styles.espnplus}>
                 {/* <span>ESPN+</span> */}
               </span>
             </a>
             <span className={styles.arrow}></span>
             <div className={styles.dropdownArrowContent}>
-              <Dropdown items={SharedData.espnplus.items} />
+              <DropdownMenu items={SharedData.espnplus.items} />
             </div>
           </li>
         </ul>
@@ -262,7 +301,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             subNavTabs={tab.subNavTabs}
           />
         ))}
-      {activeTab === "soccer" &&
+      {activeTab === "soccer" || path.includes("/Soccer") &&
         soccerTabs.map((tab, index) => (
           <SubNavBar
             key={index}

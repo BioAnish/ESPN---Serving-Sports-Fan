@@ -10,4 +10,5 @@ export interface IQuickLink {
 export interface ICardWithLinkAction extends React.HTMLAttributes<HTMLDivElement> {
   header?: string;
   quickLinks: IQuickLink[];
+  headerLink?: boolean;
 }

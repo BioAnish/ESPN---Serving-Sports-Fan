@@ -1,0 +1,332 @@
+.pageLayout {
+  background: #edeef0;
+  padding: 0 10px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  max-width: 1160px;
+  width: 100%;
+  padding-top: 20px;
+  .col_one{
+    width: 100%;
+    .table__header {
+      margin: 8px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .table__headline {
+        color: #2b2c2d;
+        font-size: 28px;
+        font-weight: 800;
+        margin: 0;
+      }
+    }
+    .table__container {
+      display: flex;
+      flex-direction: column;
+      .dropdown {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        .card__dropdown {
+          background-color: #fbfbfb;
+          border: 1px solid #cbccce;
+          border-radius: 40px;
+          display: inline-block;
+          position: relative;
+          z-index: 0;
+          &:hover {
+            background-color: #fff;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            border: solid #06c;
+            border-width: 0 1px 1px 0;
+            padding: 3px;
+            transform: rotate(45deg);
+            margin-left: 14px;
+            top: 33%;
+            right: 10px;
+          }
+          .card__dropdown__select {
+            text-overflow: ellipsis;
+            appearance: none;
+            background-color: initial;
+            border: 0;
+            cursor: pointer;
+            font-size: 12px;
+            height: 30px;
+            line-height: normal;
+            padding: 0 30px 0 15px;
+            text-transform: none;
+            color: #2b2c2d;
+          }
+        }
+      }
+      .standings__table {
+        .Table__Title {
+          color: #2b2c2d;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 21px;
+          margin-bottom: 8px;
+          margin-top: 8px;
+          position: relative;
+          text-align: left;
+          text-transform: capitalize;
+        }
+        .Table__content {
+          display: flex;
+          .Table {
+            width: auto;
+            height: fit-content;
+            border-right: 1px solid #dcdddf;
+            border-collapse: collapse;
+            .Table__Colgroup {
+              display: table-column-group;
+              &:last-of-type {
+                border-right: 0;
+              }
+              .Table__Column {
+                border-left: none;
+                border-right: none;
+                display: table-column;
+              }
+            }
+            .Table__header__group {
+              display: table-header-group;
+              .Table__sub__header {
+                display: table-row;
+                height: auto;
+                .subHeader__item__content {
+                  border-bottom: 1px solid #dcdddf;
+                  border-top: 1px solid #dcdddf;
+                  color: #48494a;
+                  font-size: 11px;
+                  height: 24px;
+                  line-height: 15px;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  display: table-cell;
+                  font-variant-numeric: tabular-nums;
+                  padding: 4px 4px 3px;
+                  text-align: left;
+                  vertical-align: middle;
+                  white-space: nowrap;
+                  span {
+                    width: 100%;
+                    font-weight: 600;
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+            .Table__TBODY {
+              display: table-row-group;
+              .Table__TR {
+                display: table-row;
+                height: auto;
+                &:nth-child(2n) {
+                  background: rgba(0, 0, 0, 0.02);
+                }
+                .Table__TD {
+                  height: 28px;
+                  border-bottom: 1px solid #f1f2f3;
+                  font-size: 12px;
+                  line-height: 19px;
+                  color: #6c6d6f;
+                  display: table-cell;
+                  font-variant-numeric: tabular-nums;
+                  padding: 4px 4px 3px;
+                  text-align: left;
+                  vertical-align: middle;
+                  white-space: nowrap;
+                  .team__link {
+                    display: flex;
+                    align-items: center;
+                    color: #48494a;
+                    .team__position {
+                      width: 14px;
+                      margin-left: 4px;
+                      padding-right: 8px;
+                    }
+                    .TeamLink__Logo {
+                      margin: -3px 0 -4px;
+                      padding-right: 12px;
+                      img {
+                        height: 20px;
+                        width: 20px;
+                      }
+                    }
+                    .TeamLink__name {
+                      .AnchorLink {
+                        color: #06c;
+                        &:hover {
+                          color: #004d9a;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .Table__ScrollerWrapper {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            .Table__Scroller {
+              overflow-x: auto;
+              overflow-y: hidden;
+              position: relative;
+              vertical-align: top;
+              white-space: nowrap;
+              width: 100%;
+              .table {
+                width: 100%;
+                border-collapse: collapse;
+                .Table__Colgroup {
+                  display: table-column-group;
+                  &:last-of-type {
+                    border-right: 0;
+                  }
+                  .Table__Column {
+                    border-left: none;
+                    border-right: none;
+                    display: table-column;
+                  }
+                }
+                .Table__header__group {
+                  display: table-header-group;
+                  .Table__sub__header {
+                    display: table-row;
+                    .subHeader__item__content {
+                      border-bottom: 1px solid #dcdddf;
+                      border-top: 1px solid #dcdddf;
+                      color: #48494a;
+                      font-size: 11px;
+                      height: 24px;
+                      line-height: 15px;
+                      text-transform: uppercase;
+                      display: table-cell;
+                      font-variant-numeric: tabular-nums;
+                      padding: 4px 4px 3px;
+                      vertical-align: middle;
+                      white-space: nowrap;
+                      span {
+                        width: 100%;
+                        font-weight: 600;
+                        display: inline-block;
+                        a {
+                          color: #151617;
+                          text-decoration: underline;
+                          &:hover {
+                            color: #4c99e6;
+                          }
+                        }
+                      }
+                    }
+                    .tar {
+                      text-align: right !important;
+                    }
+                  }
+                }
+                .Table__TBODY {
+                  display: table-row-group;
+                  .Table__TR {
+                    display: table-row;
+                    &:nth-child(2n) {
+                      background: rgba(0, 0, 0, 0.02);
+                    }
+                    .Table__TD {
+                      text-align: right;
+                      height: 28px;
+                      border-bottom: 1px solid #f1f2f3;
+                      font-size: 12px;
+                      line-height: 19px;
+                      display: table-cell;
+                      font-variant-numeric: tabular-nums;
+                      padding: 4px 4px 3px;
+                      vertical-align: middle;
+                      white-space: nowrap;
+                      .stat__cell {
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-left: auto;
+                        min-width: 25px;
+                        color: #6c6d6f;
+                      }
+                      .clr__negative {
+                        color: #d00 !important;
+                      }
+                      .clr__positive {
+                        color: #094 !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .positions {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: #edeef0;
+        .position_description {
+          margin-top: 8px;
+          display: block;
+          color: #48494a;
+          font-weight: 600;
+          line-height: 16px;
+          font-size: 12px;
+        }
+      }
+      .glossary {
+        display: block;
+        margin-top: 12px;
+        width: 100%;
+        .glossary__title {
+          margin: 0;
+          font-size: 11px;
+          line-height: 13px;
+          padding-bottom: 5px;
+          padding-top: 6px;
+          color: #151617;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+        .glossary__list {
+          column-count: 3;
+          .glossary__item {
+            color: #6c6d6f;
+            display: block;
+            page-break-inside: avoid;
+            font-size: 11px;
+            line-height: 13px;
+            padding-bottom: 5px;
+            padding-top: 6px;
+            .glossary__abbr{
+                color: #151617;
+                font-weight: 600;
+                margin-right: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .col_two {
+    width: 300px;
+  }
+}
+.footer{
+  width: 1240px;
+  margin: 0 auto;
+  padding: 10px;
+}

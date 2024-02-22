@@ -3,14 +3,26 @@ import styles from "./CardWithLinkAction.module.scss";
 import { ICardWithLinkAction } from "./CardWithLinkAction.types";
 
 const CardWithLinkAction = ({
-    header,
-    quickLinks,
-    ...props
-  }: ICardWithLinkAction) => {
+  header,
+  quickLinks,
+  headerLink,
+  ...props
+}: ICardWithLinkAction) => {
   return (
     <div className={styles.quickLinkContainer} {...props}>
       <header className={styles.quickLinkHeader}>
-        <h2 className={styles.quickLinksHeading}>{header}</h2>
+        <h2 className={styles.quickLinksHeading}>
+          {headerLink ? (
+            <a className={styles.quicklinks_plus_icon_link}>
+              <img
+                className={styles.quicklinks_plus_icon}
+                src="https://a.espncdn.com/redesign/assets/img/logos/espnplus/ESPN+.svg"
+              />
+            </a>
+          ) : (
+            header
+          )}
+        </h2>
       </header>
       <ul className={styles.quickLinkList}>
         {quickLinks.map((link, index) => (

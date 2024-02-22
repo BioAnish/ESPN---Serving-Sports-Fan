@@ -1,0 +1,60 @@
+.PageFooter__Footer {
+  display: flex;
+  align-items: stretch;
+  .PageFooter__Logo__Wrapper {
+    display: flex;
+    align-items: center;
+    flex: none;
+    margin-right: 24px;
+    padding-right: 24px;
+    img {
+      height: 23px;
+      width: 90px;
+      flex-shrink: 0;
+      margin: 0;
+      max-width: 100%;
+      position: relative;
+    }
+  }
+  .LegalFooter {
+    margin-right: 24px;
+    padding-right: 24px;
+    .LegalFooter__Links {
+      overflow: hidden;
+      .LegalFooter__Links__List {
+        margin: 0 -8px;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        .LegalFooter__Links__Item {
+          padding-left: 8px;
+          padding-right: 8px;
+          white-space: nowrap;
+          position: relative;
+          &:before {
+            background: #dcdddf;
+            bottom: 2px;
+            content: "";
+            left: 0;
+            position: absolute;
+            top: 2px;
+            width: 1px;
+          }
+          .LegalFooter__Link {
+            color: #151617;
+            font-size: 12px;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .LegalFooter__Copyright {
+      color: #48494a;
+      font-size: 11px;
+      line-height: 13px;
+      margin-top: 4px;
+    }
+  }
+}

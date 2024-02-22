@@ -1,0 +1,88 @@
+.newscard__wrapper {
+  position: relative;
+  .newscard__contentlist {
+    margin-top: 12px;
+    .newscard__contentlist__item {
+      padding: 10px 0;
+      border-top: 1px dotted #b5b7b7;
+      .news__item {
+        display: flex;
+        flex-direction: row;
+        .News__Item__Thumbnail {
+          border-radius: 6px;
+          display: inline;
+          flex-shrink: 0;
+          float: left;
+          height: 60px;
+          width: 60px;
+          overflow: hidden;
+          position: relative;
+          margin: 0;
+          max-width: 100%;
+          margin-right: 12px;
+          .RatioFrame {
+            padding-bottom: 100%;
+            position: relative;
+            overflow: hidden;
+          }
+          .aspect__ratio__child {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+          }
+          img {
+            min-height: 100%;
+            object-fit: cover;
+            vertical-align: top;
+            width: 100%;
+            border-style: none;
+          }
+        }
+        .News__Content__Container {
+          max-width: calc(100% - 72px);
+          .News__Item__Headline {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 16px;
+            overflow: hidden;
+            color: #48494a;
+            margin: 0;
+          }
+          .News__Item__Description {
+            color: #6c6d6f;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            overflow: hidden;
+            padding-top: 2px;
+          }
+          .MetaContent {
+            display: flex;
+            align-items: center;
+            .MetaContent__Item {
+              color: #a5a6a7;
+              font-size: 11px;
+              display: inline-flex;
+              flex-shrink: 0;
+            }
+            .MetaContent__Item__Author {
+              display: list-item;
+              flex-shrink: 1;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              &:before{
+                content: "•";
+                margin: 0 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

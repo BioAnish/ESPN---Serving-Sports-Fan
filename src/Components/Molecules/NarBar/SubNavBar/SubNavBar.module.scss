@@ -1,9 +1,7 @@
 .navBar {
   position: relative;
   border-radius: 1px;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
   background: #fff;
-
   .navSecondary {
     display: flex;
     gap: 16px;
@@ -11,28 +9,23 @@
     margin: 0 auto;
     max-width: 1400px;
     position: relative;
-
     .divider {
       width: 2px;
       height: 44px;
       background: #cbccce;
     }
-
     .sportsLogo {
       cursor: pointer;
       line-height: 44px;
-
       a {
         text-decoration: none;
         display: flex;
         align-items: center;
         gap: 10px;
-
         img {
           height: 30px;
           width: 30px;
         }
-
         span {
           font-weight: 800;
           color: #2b2c2d;
@@ -40,13 +33,9 @@
         }
       }
     }
-
     .navigationTab {
-      ul {
-        padding: 0;
-        margin: 0;
-
-        li {
+      .navigationTab__ul {
+        .navigationTab__li {
           list-style: none;
           color: #2b2c2d;
           font-size: 13px;
@@ -55,35 +44,66 @@
           display: inline-block;
           line-height: 44px;
           cursor: pointer;
-
-          a {
+          .navigationTab__label {
+            color: #151617;
             padding: 0 10px;
             text-decoration: none;
-
-            &:before {
-              background-color: transparent;
+            position: relative !important;
+            display: inline-block;
+            &:hover:before {
+              background-color: #d00;
               bottom: 0;
-              content: "";
+              content: '';
               height: 4px;
               left: 0;
               position: absolute;
               right: 0;
-              transition: background-color 0.3s ease;
-              /* Added transition for smooth color change */
             }
           }
-
-          &:hover a:before,
-          &.active a:before {
-            /* Use .active class to show indicator for clicked item */
+          .active:before{
             background-color: #d00;
+            bottom: 0;
+            content: '';
+            height: 4px;
+            left: 0;
+            position: absolute;
+            right: 0;
           }
-
-          &:hover + li a:before,
-          &.active + li a:before {
-            /* Remove indicator from previous item */
-            background-color: transparent;
+          .dropdownArrow {
+            position: relative;
+            content: "";
+            display: inline-block;
+            border: solid #48494a;
+            border-width: 0 1px 1px 0;
+            padding: 3px;
+            transform: rotate(45deg);
+            margin-left: -2px;
+            margin-right: 4px;
+            top: -3px;
           }
+          .dropdownArrowContent {
+            display: none;
+            position: absolute;
+            transition: max-height 0.2s ease-in;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000051;
+            margin: 0 auto;
+            overflow: hidden;
+            top: 44px;
+            left: 0;
+          }
+          &:hover .dropdownArrowContent {
+            display: block;
+          }
+          &:hover .dropdownArrowContent > ul {
+            opacity: 1;
+            visibility: visible;
+          }
+          // &:hover .navigationTab__label:before,
+          // .navigationTab__li.active .navigationTab__label:before {
+          //   background-color: #d00;
+          // }
         }
       }
     }
