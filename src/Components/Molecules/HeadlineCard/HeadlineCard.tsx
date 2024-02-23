@@ -28,6 +28,9 @@ const HeadlineCard = ({
             <h2>{title}</h2>
             <h3>{subTitle}</h3>
           </div>
+          {/* <div className={style.contentItem__header__link}>
+            <a>See All</a>
+          </div> */}
         </div>
         {children}
         {bottomDescription && (

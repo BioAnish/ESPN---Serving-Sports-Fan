@@ -17,13 +17,13 @@
       font-size: 12px;
       line-height: 16px;
       overflow: hidden;
-      color: #000;
       &:last-child {
         a {
           border: none;
         }
       }
       a {
+        color: #000;
         font-weight: 500;
         border-bottom: #dcdddf 1px solid;
         padding: 7px 0;

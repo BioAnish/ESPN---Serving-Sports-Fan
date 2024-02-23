@@ -21,26 +21,35 @@ const NavBar: React.FC<NavBarProps> = () => {
   const nhlTabs = SharedData.nhlTabs;
   const soccerTabs = SharedData.soccerTabs;
   const [activeTab, setActiveTab] = useState<string | null>(null);
-  const path = usePathname()
+  const path = usePathname();
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName === activeTab ? null : tabName);
   };
   const { regionTeams } = SharedData;
   const tabs: Tab[] = SharedData.nflTabs;
-  
+
   return (
     <div>
       <div className={styles.nav}>
         <h2 className={styles.logo}>
-          <a className={styles.logolink}>
-            ESPN
-          </a>
+          <a className={styles.logolink}>ESPN</a>
         </h2>
         <ul className={styles.ul}>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
               href="/Soccer"
-              className={`${styles.tab__link} ${path === "/Soccer" ? styles.active : ''}`}
+              className={`${styles.tab__link} ${
+                path === "/Soccer" ||
+                path === "/Soccer/SoccerHome" ||
+                path === "/Soccer/SoccerScore" ||
+                path === "/Soccer/SoccerSchedule" ||
+                path === "Soccer/SoccerTable" ||
+                path === "/Soccer/SoccerTransfer" ||
+                path === "/Soccer/SoccerTeam" ||
+                path === "/Soccer/Team"
+                  ? styles.active
+                  : ""
+              }`}
               onClick={() => handleTabClick("soccer")}
             >
               <span>
@@ -91,7 +100,7 @@ const NavBar: React.FC<NavBarProps> = () => {
           </li>
           <li className={`${styles.li} ${styles.dropdown}`}>
             <a
-               href="/Soccer"
+              href="/Soccer"
               className={styles.tab__link}
               onClick={() => handleTabClick("nfl")}
             >
@@ -301,15 +310,16 @@ const NavBar: React.FC<NavBarProps> = () => {
             subNavTabs={tab.subNavTabs}
           />
         ))}
-      {activeTab === "soccer" || path.includes("/Soccer") &&
-        soccerTabs.map((tab, index) => (
-          <SubNavBar
-            key={index}
-            logoSrc={tab.logoSrc}
-            title={tab.title}
-            subNavTabs={tab.subNavTabs}
-          />
-        ))}
+      {activeTab === "soccer" ||
+        (path.includes("/Soccer") &&
+          soccerTabs.map((tab, index) => (
+            <SubNavBar
+              key={index}
+              logoSrc={tab.logoSrc}
+              title={tab.title}
+              subNavTabs={tab.subNavTabs}
+            />
+          )))}
     </div>
   );
 };

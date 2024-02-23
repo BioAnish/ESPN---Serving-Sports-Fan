@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import style from "./page.module.scss";
 import Card from "@/Components/Atoms/Card/Card";
@@ -5,7 +6,7 @@ import Button from "@/Components/Atoms/Button/Button";
 import NewsCard from "@/Components/Molecules/NewsCard/NewsCard";
 import SharedData from "@/Utils/SharedData";
 import Footer from "@/Components/Molecules/Footer/Footer";
-import { IoCalendarOutline } from "react-icons/io5";
+import DateCarousel from "@/Components/Atoms/DateCarousel/DateCarousel";
 
 const SoccerScorePage = () => {
   return (
@@ -23,87 +24,7 @@ const SoccerScorePage = () => {
                 </select>
               </div>
             </div>
-            <div className={style.date__picker}>
-              <div className={style.datePicker__wrapper}>
-                <div className={style.date__Carousel}>
-                  <button
-                    className={`${style.arrow__button} ${style.left__button}`}
-                  ></button>
-                  <div className={style.react__swipe__container}>
-                    <div className={style.container}>
-                      <div className={style.week}>
-                        <div className={style.Week__wrapper}>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>Mon</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 12</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>tue</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 13</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>wed</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 14</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>thu</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 15</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>fri</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 16</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>sat</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 17</span>
-                              </span>
-                            </div>
-                          </div>
-                          <div tabIndex={0} className={style.day}>
-                            <div className={style.day__Container}>
-                              <p className={style.day__Name}>sun</p>
-                              <span className={style.day__Number}>
-                                <span>Feb 18</span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    className={`${style.arrow__button} ${style.right__button}`}
-                  ></button>
-                </div>
-                <div className={style.calendar__container}>
-                  <button className={style.DateCarousel__MonthTrigger}>
-                  <IoCalendarOutline size={"2em"} className={style.calendar__icon}/>
-                  </button>
-                </div>
-              </div>
-            </div>
+            <DateCarousel />
           </Card>
           <header
             className={style.Card__Header}

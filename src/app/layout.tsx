@@ -19,9 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <HeaderCarousel />
-        <NavBar regionTeams={[]} />
-        {children}
+        <div>
+          <HeaderCarousel />
+        </div>
+        <div className="sticky-header">
+          <NavBar regionTeams={[]} />
+        </div>
+        <div className="content">{children}</div>
       </body>
     </html>
   );

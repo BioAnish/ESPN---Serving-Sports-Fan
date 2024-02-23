@@ -6,6 +6,7 @@ const HeaderTools = () => {
   return (
     <ul className={style.tools}>
         <li className={style.search}>
+          <a></a>
             <img src='/search.svg'></img>
         </li>
         <li className={style.user}>

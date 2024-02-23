@@ -1,5 +1,5 @@
-export interface IDropdownMenuProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement> {
+export interface IDropdownMenuProps{
     items?: string[];
     blueVariant?: boolean;
+    onSelect?: (selectedItem: string) => void;
 }

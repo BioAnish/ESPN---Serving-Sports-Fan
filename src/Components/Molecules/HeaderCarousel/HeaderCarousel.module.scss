@@ -2,12 +2,60 @@
   margin: 0 auto;
   max-width: 1400px;
   .scoreboard_content {
+    display: flex;
+    position: relative;
+    // &:last-child{
+    //   float: right;
+    // }
     .scoreboard_dropdown_wrapper {
       color: #48494a;
       float: left;
       min-width: 120px;
       padding: 18px 7px 0 10px;
       position: relative;
+    }
+    .scores_carousel {
+      height: 65px;
+      padding: 0;
+      background: #f1f2f3;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      overflow-x: auto;
+      .gameContainer {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: inherit;
+        white-space: nowrap;
+        transition: transform 0.3s ease;
+        .gameItem {
+          display: flex;
+        }
+      }
+    }
+    .view__full{
+      // border-left: 1px solid #a5a6a7;
+      border-right: 1px solid #a5a6a7 !important;
+      padding: 6px;
+      text-align: center;
+      width: 90px;
+      transition: all .2s ease-in-out;
+      border-right: 0;
+      cursor: pointer;
+      display: table;
+      float: right;
+      overflow: hidden;
+      a{
+        display: table-cell;
+        height: 100%;
+        padding: 0 1px;
+        vertical-align: middle;
+        width: 100%;
+        line-height: 1.6;
+        font-size: 11px;
+      }
     }
   }
 }

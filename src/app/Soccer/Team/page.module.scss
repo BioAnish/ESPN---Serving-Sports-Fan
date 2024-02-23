@@ -97,22 +97,21 @@
           font-size: 14px;
           line-height: 19px;
           .Nav__Secondary__Menu__Sub_Link {
-            // box-shadow: inset 0 -3px 0 #d00;
             color: #151617;
             height: 44px;
             display: flex;
             align-items: center;
             padding-left: 8px;
             padding-right: 8px;
+            &:hover{
+              box-shadow: inset 0 -3px 0 #d00;
+            }
+            &.clicked{
+              box-shadow: inset 0 -3px 0 #d00;
+            }
           }
         }
-        .hideLogoUntilSticky {
-          margin: 0 !important;
-          overflow: hidden;
-          position: relative;
-          transition: all 0.2s ease-in-out;
-          margin-right: 4px !important;
-          width: 52px;
+        .Nav__Secondary__Menu__Title {
           &:after {
             background: #edeef0;
             bottom: 12px;
@@ -122,6 +121,23 @@
             top: 12px;
             width: 1px;
           }
+        }
+        .hideLogoUntilSticky {
+          margin: 0!important;
+          overflow: hidden;
+          position: relative;
+          -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+          width: 0;
+        }
+        .showLogo {
+          margin: 0!important;
+          overflow: hidden;
+          position: relative;
+          -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+          margin-right: 4px!important;
+          width: 52px;
         }
         .Nav__Secondary__Menu__Link {
           padding: 0 12px 0 8px !important;
@@ -299,6 +315,12 @@
                     text-align: center;
                     align-items: center;
                     border-bottom: 0 solid transparent;
+                    &:hover{
+                      border-color: #c00;
+                      border-width: 2px;
+                      cursor: pointer;
+                      padding-bottom: 0;
+                    }
                     .tabs__link {
                         display: flex;
                         height: 37px;
@@ -322,4 +344,20 @@
       }
     }
   }
+}
+.Nav__Secondary__Menu__Item {
+  color: #151617; /* Set the initial color for all list items */
+  opacity: 1; /* Ensure full opacity by default */
+  transition: opacity 0.2s ease-in-out; /* Add transition for smooth effect */
+}
+
+.Nav__Secondary__Menu__Item:hover {
+  opacity: 1; /* Keep opacity 1 on the hovered item */
+}
+
+.Nav__Secondary__Menu:hover .Nav__Secondary__Menu__Item:not(:hover) {
+  opacity: 0.6; /* Decrease opacity of all list items except the hovered one */
+}
+.hovered {
+  box-shadow: none; /* Remove box shadow when hovered */
 }

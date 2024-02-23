@@ -23,6 +23,12 @@ body {
   }
 }
 
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

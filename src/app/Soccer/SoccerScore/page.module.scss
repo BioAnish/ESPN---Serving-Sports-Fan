@@ -1,4 +1,4 @@
-.pageLayout{
+.pageLayout {
   background: #edeef0;
   padding: 0 10px;
   margin: 0 auto;
@@ -9,7 +9,7 @@
   max-width: 1160px;
   width: 100%;
   padding-top: 20px;
-  .col_one{
+  .col_one {
     width: 100%;
     .card__heading {
       margin-bottom: 12px;
@@ -59,155 +59,6 @@
         }
       }
     }
-    .date__picker {
-      margin: 12px -12px -12px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      position: relative;
-      height: 50px;
-      -webkit-box-flex: 1;
-      .datePicker__wrapper {
-        display: flex;
-        position: absolute;
-        width: 100%;
-        box-sizing: border-box;
-        .date__Carousel {
-          padding: 0 40px;
-          position: relative;
-          width: calc(100% - 50px);
-          .arrow__button {
-            outline: none;
-            background: none;
-            border: 0;
-            cursor: pointer;
-            height: 50px;
-            padding: 0;
-            //margin: 0;
-            position: absolute;
-            text-align: center;
-            top: 0;
-            width: 40px;
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: none;
-            overflow: visible;
-            font-size: 100%;
-            line-height: 1.15;
-            margin: 0;
-          }
-          .left__button {
-            left: 0;
-            &:after {
-              content: "";
-              position: absolute;
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 5px 3px;
-              border-color: transparent transparent transparent #06c;
-              transform: translateY(-50%) rotate(180deg);
-            }
-          }
-          .right__button {
-            right: 0;
-            &:before {
-              content: "";
-              position: absolute;
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 5px 3px;
-              border-color: transparent transparent transparent #06c;
-              transform: translateY(-50%);
-            }
-          }
-          .react__swipe__container {
-            overflow: hidden;
-            visibility: visible;
-            position: relative;
-            display: block;
-            .container {
-              overflow: hidden;
-              position: relative;
-              width: auto;
-              .week {
-                width: 100%;
-                position: relative;
-                transition-property: transform;
-                //left: -19250px;
-                transition-duration: 0ms;
-                transform: translate(0px, 0px) translateZ(0px);
-                display: inline-block;
-                height: 50px;
-                text-transform: uppercase;
-                .Week__wrapper {
-                  display: flex;
-                  height: 100%;
-                  justify-content: space-around;
-                  position: relative;
-                  .day {
-                    animation: fadeIn 1s ease-in-out forwards;
-                    align-items: center;
-                    border-radius: 4px;
-                    color: #48494a;
-                    cursor: pointer;
-                    display: flex !important;
-                    flex-grow: 1;
-                    font-size: 12px;
-                    font-weight: 400;
-                    justify-content: center;
-                    margin: 4px 0;
-                    min-height: 42px;
-                    text-align: center;
-                    .day__Container {
-                      border-radius: 4px;
-                      padding: 4px;
-                      .day__Name {
-                        margin: 0;
-                        .day__Number {
-                          display: block;
-                          font-size: 10px;
-                          font-weight: 400;
-                        }
-                      }
-                    }
-                    &:hover {
-                      font-weight: 700;
-                    }
-                    &:focus {
-                      background-color: #d8d8d8;
-                      box-shadow: 0 0 4px 0 #06c;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      .calendar__container {
-        display: flex;
-        align-items: center;
-        .DateCarousel__MonthTrigger {
-          outline: none;
-          background-color: initial;
-          border: 0;
-          border-left: 1px solid #edeef0;
-          border-radius: 0;
-          cursor: pointer;
-          transition: all 0.23s ease-in-out;
-          text-transform: none;
-          overflow: visible;
-          padding-right: 14px;
-          .calendar__icon{
-            color: #6c6d6f;
-          }
-        }
-      }
-    }
     .Card__Header {
       align-items: center;
       color: #121213;
@@ -229,7 +80,7 @@
         }
       }
     }
-    
+
     .Card__League__Header {
       .AnchorLink {
         cursor: pointer;
@@ -268,7 +119,7 @@
           flex-grow: 1;
           width: 100%;
           display: flex;
-        //   justify-content: space-between;
+          //   justify-content: space-between;
           .Scoreboard__Column {
             min-height: 0;
           }
@@ -416,60 +267,60 @@
             padding-left: 8px !important;
             padding-right: 8px !important;
             .TeamInformation {
-                .ContentList {
+              .ContentList {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .ContentList__Item {
+                  .TeamLinks {
                     display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    .ContentList__Item{
-                        .TeamLinks{
-                            display: flex;
-                            align-items: center;
-                            .AnchorLink{
-                                cursor: pointer;
-                                text-decoration: none;
-                                h2{
-                                    display: flex;
-                                    align-items: center;
-                                    color: #151617;
-                                    margin: 0;
-                                    padding: 0;
-                                    font-size: 12px;
-                                    line-height: 16px;
-                                    font-weight: 600;
-                                    img {
-                                        height: 16px;
-                                        width: 16px;
-                                    }
-                                    span{
-                                        padding-left: 4px;
-                                    }
-                                    &:hover {
-                                        color: #06c;
-                                    }
-                                }
-                            }
-                            .TeamLinks__Links {
-                                .TeamLinks__Link {
-                                    font-size: 11px;
-                                    line-height: 13px;
-                                    font-weight: 400;
-                                    white-space: nowrap;
-                                    a{
-                                        color: #06c;
-                                    }
-                                    &:nth-child(2)::before {
-                                        content: " | ";
-                                        color: #dcdddf;
-                                    }
-                                    &:last-child:before {
-                                        content: " | ";
-                                        color: #dcdddf;
-                                    }
-                                }
-                            }
+                    align-items: center;
+                    .AnchorLink {
+                      cursor: pointer;
+                      text-decoration: none;
+                      h2 {
+                        display: flex;
+                        align-items: center;
+                        color: #151617;
+                        margin: 0;
+                        padding: 0;
+                        font-size: 12px;
+                        line-height: 16px;
+                        font-weight: 600;
+                        img {
+                          height: 16px;
+                          width: 16px;
                         }
+                        span {
+                          padding-left: 4px;
+                        }
+                        &:hover {
+                          color: #06c;
+                        }
+                      }
                     }
+                    .TeamLinks__Links {
+                      .TeamLinks__Link {
+                        font-size: 11px;
+                        line-height: 13px;
+                        font-weight: 400;
+                        white-space: nowrap;
+                        a {
+                          color: #06c;
+                        }
+                        &:nth-child(2)::before {
+                          content: " | ";
+                          color: #dcdddf;
+                        }
+                        &:last-child:before {
+                          content: " | ";
+                          color: #dcdddf;
+                        }
+                      }
+                    }
+                  }
                 }
+              }
             }
           }
         }
@@ -482,11 +333,11 @@
       }
     }
   }
-  .col_two{
-    width: 300px
+  .col_two {
+    width: 300px;
   }
 }
-.footer{
+.footer {
   width: 1240px;
   margin: 0 auto;
   padding: 10px;

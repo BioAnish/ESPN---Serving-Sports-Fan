@@ -1,9 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import style from "./page.module.scss";
 import Button from "@/Components/Atoms/Button/Button";
 import HeadlineCard from "@/Components/Molecules/HeadlineCard/HeadlineCard";
 import HeadlineTopCard from "@/Components/Molecules/HeadlineCard/HeadlineTopCard/HeadlineTopCard";
-import MiniCardCarousel from "@/Components/Molecules/MiniCardCarousel/MiniCardCarousel";
 
 const navigationItems = [
   "Home",
@@ -16,6 +16,38 @@ const navigationItems = [
 ];
 
 const Team = () => {
+  const [clickedItem, setClickedItem] = useState(-1);
+  const [isHovered, setIsHovered] = useState(false);
+  const handleClick = (index: number) => {
+    setClickedItem(index === clickedItem ? -1 : index);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const [isSticky, setIsSticky] = useState(false);
+  const threshold = 100;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > threshold) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className={style.StickyContainer}>
       <div className={style.ResponsiveWrapper}>
@@ -45,7 +77,9 @@ const Team = () => {
         <nav className={style.Nav__Secondary}>
           <ul className={style.Nav__Secondary__Menu}>
             <li
-              className={`${style.Nav__Secondary__Menu__Title} ${style.hideLogoUntilSticky}`}
+              className={`${style.Nav__Secondary__Menu__Title} ${
+                isSticky ? style.showLogo : style.hideLogoUntilSticky
+              }`}
             >
               <a className={style.Nav__Secondary__Menu__Link}>
                 <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/160.png&scale=crop&cquality=40&location=origin&w=64&h=64" />
@@ -53,7 +87,14 @@ const Team = () => {
             </li>
             {navigationItems.map((item, index) => (
               <li key={index} className={style.Nav__Secondary__Menu__Item}>
-                <a className={style.Nav__Secondary__Menu__Sub_Link}>
+                <a
+                  className={`${style.Nav__Secondary__Menu__Sub_Link} ${
+                    clickedItem === index ? style.clicked : ""
+                  }`}
+                  onClick={() => handleClick(index)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <span className={style.Nav__Text}>{item}</span>
                 </a>
               </li>

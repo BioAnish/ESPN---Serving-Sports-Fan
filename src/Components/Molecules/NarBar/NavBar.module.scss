@@ -74,6 +74,7 @@
         color: #ffffff;
         font-size: 14px;
         text-decoration: none;
+        opacity: 1;
         &:hover:before {
           content: "";
           position: absolute;
@@ -135,6 +136,7 @@
           transform: rotate(45deg);
           margin-left: 14px;
           top: -3px;
+          opacity: 1;
         }
       }
       .dropdownArrowContent {
@@ -226,4 +228,10 @@
       float: right;
     }
   }
+}
+.ul:hover .li .tab__link:not(:hover) {
+  opacity: 0.6;
+}
+.ul:hover .li .arrow:not(:hover) {
+  opacity: 0.6;
 }

@@ -28,10 +28,28 @@ const SportScorecard = ({
                       <img src={imageurlHome} alt="Home Team Logo" />
                     </div>
                     <div className={style.score_team}>
-                      <div className={style.score_truncate}>
+                      <div
+                        className={`${style.score_truncate} ${
+                          winningTeam === "home" && !isDraw
+                            ? ""
+                            : winningTeam !== "home" && !isDraw
+                            ? style.losing_team
+                            : ""
+                        }`}
+                      >
                         <span>{homeTeam}</span>
                       </div>
-                      <div className={style.score_score}>{homeTeamScore}</div>
+                      <div
+                        className={`${style.score_score} ${
+                          winningTeam === "home" && !isDraw
+                            ? ""
+                            : winningTeam !== "home" && !isDraw
+                            ? style.losing_team
+                            : ""
+                        }`}
+                      >
+                        {homeTeamScore}
+                      </div>
                       {winningTeam === "home" && !isDraw && (
                         <div className={style.winning__indicator}></div>
                       )}
@@ -42,10 +60,28 @@ const SportScorecard = ({
                       <img src={imageurlAway} alt="Away Team Logo" />
                     </div>
                     <div className={style.score_team}>
-                      <div className={style.score_truncate}>
+                      <div
+                        className={`${style.score_truncate} ${
+                          winningTeam === "away" && !isDraw
+                            ? ""
+                            : winningTeam !== "away" && !isDraw
+                            ? style.losing_team
+                            : ""
+                        }`}
+                      >
                         <span>{awayTeam}</span>
                       </div>
-                      <div className={style.score_score}>{awayTeamScore}</div>
+                      <div
+                        className={`${style.score_score} ${
+                          winningTeam === "away" && !isDraw
+                            ? ""
+                            : winningTeam !== "away" && !isDraw
+                            ? style.losing_team
+                            : ""
+                        }`}
+                      >
+                        {awayTeamScore}
+                      </div>
                       {winningTeam === "away" && !isDraw && (
                         <div className={style.winning__indicator}></div>
                       )}

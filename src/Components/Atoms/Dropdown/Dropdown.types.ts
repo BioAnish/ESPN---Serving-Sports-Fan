@@ -1,3 +1,4 @@
 export interface IDropdownProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement> {
+  extends React.HTMLAttributes<HTMLDivElement> {
+    selectedItem?: string;
 }

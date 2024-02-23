@@ -18,7 +18,7 @@ const TopHeadlines = ({ headlines }: ITopHeadlineProps) => {
           <ul className={style.headlineStack__list}>
             {headlines.map((headline, index) => (
               <li key={index}>
-                <a>{headline}</a>
+                <a href="#">{headline}</a>
               </li>
             ))}
           </ul>
