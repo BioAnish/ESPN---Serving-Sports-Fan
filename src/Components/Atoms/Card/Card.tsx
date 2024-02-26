@@ -4,22 +4,21 @@ import { ICardProps } from "./Card.types";
 
 const Card = ({
   children,
-  cardStyle,
-  backgroundColor,
-  padding,
+  cardStyle = {},
+  backgroundColor = "#ffffff",
+  padding = 0,
   heading,
   ...props
 }: ICardProps) => {
-  const bgColor = backgroundColor || "#ffffff";
   const mergedStyles = {
-    background: bgColor,
-    padding: padding || 0,
+    background: backgroundColor,
+    padding,
     ...cardStyle,
   };
 
   return (
-    <div className={styles["card-container"]} style={mergedStyles} {...props}>
-      <h3 className={styles["card-heading"]}>{heading}</h3>
+    <div className={styles.cardContainer} style={mergedStyles} {...props}>
+      <h3 className={styles.cardHeading}>{heading}</h3>
       {children}
     </div>
   );

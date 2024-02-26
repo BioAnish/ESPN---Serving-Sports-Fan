@@ -51,16 +51,15 @@
       top: 10px;
     }
   }
-  .ul {
-    list-style: none;
+  .navigation__tab {
     padding: 0 40px 0 40px;
     margin: 0 auto;
     width: 100%;
     max-width: 1400px;
-    .li:hover .dropdownArrowContent {
+    .navigation__tab__item:hover .dropdownArrowContent {
       display: flex;
     }
-    .li {
+    .navigation__tab__item {
       float: left;
       position: relative;
       margin-right: 12px;
@@ -229,9 +228,9 @@
     }
   }
 }
-.ul:hover .li .tab__link:not(:hover) {
+.navigation__tab:hover .navigation__tab__item .tab__link:not(:hover) {
   opacity: 0.6;
 }
-.ul:hover .li .arrow:not(:hover) {
+.navigation__tab:hover .navigation__tab__item .arrow:not(:hover) {
   opacity: 0.6;
 }

@@ -9,13 +9,12 @@ const Button = ({
   variant = "primary",
   iconPath,
   ...props
-}: IButtonProps & { iconPath?: string }) => {
+}: IButtonProps) => {
+  const hasIcon = variant === "yellow" && iconPath;
   return (
     <button className={cn(style.button)} data-variant={variant} {...props}>
       {children ?? label}
-      {variant === "yellow" && iconPath && (
-        <img src={iconPath} alt="icon" className={style.icon} />
-      )}
+      {hasIcon && <img src={iconPath} alt="icon" className={style.icon} />}
     </button>
   );
 };

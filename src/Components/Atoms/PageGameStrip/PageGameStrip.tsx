@@ -103,7 +103,7 @@ const PageGameStrip = ({
               <img src="https://assets.espn.com/i/espnbet/espn-bet-square-light.svg" />
               <ul className={style.bettingWrapper}>
                 <li className={style.betting}>
-                  <span className={style.bettingPrimary}>Chelsea +625</span>
+                  <span className={style.bettingPrimary}>{rightSideTeam} +625</span>
                 </li>
 
                 <li className={style.betting}>
@@ -111,7 +111,7 @@ const PageGameStrip = ({
                 </li>
 
                 <li className={style.betting}>
-                  <span className={style.bettingPrimary}>Man City -280</span>
+                  <span className={style.bettingPrimary}>{leftSideTeam} -280</span>
                 </li>
               </ul>
               <div className={style.oddsStripCaret}></div>
@@ -138,7 +138,7 @@ const PageGameStrip = ({
                     className={`${style.centerTable} ${style.tableFirstColumn}`}
                   >
                     <div className={style.first}>
-                      <div className={style.teamName}>Manchester City</div>
+                      <div className={style.teamName}>{leftSideTeam}</div>
                       <div className={style.secondaryOdd}>(16-4-3)</div>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div
@@ -173,7 +173,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div
@@ -197,7 +197,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div
@@ -222,7 +222,7 @@ const PageGameStrip = ({
                     className={`${style.centerTable} ${style.tableFirstColumn}`}
                   >
                     <div className={style.first}>
-                      <div className={style.teamName}>Chelsea</div>
+                      <div className={style.teamName}>{rightSideTeam}</div>
                       <div className={style.secondaryOdd}>(10-4-10)</div>
                     </div>
                   </div>
@@ -237,7 +237,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div
@@ -257,7 +257,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div
@@ -281,7 +281,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div
@@ -321,7 +321,7 @@ const PageGameStrip = ({
                   <a
                     className={style.cellWrapper}
                     target="_blank"
-                    href="https://espnbet.app.link/?%24canonical_url=%2Fsport%2Fsoccer%2Forganization%2Fengland%2Fcompetition%2Fpremier-league%2Fevent%2F9925931f-ce9c-46ee-a0fa-ea9b8ba07143&amp;channel=espn-web&amp;campaign=betting-integrations&amp;tags=pageTemplate%3Asoccer-index&amp;tags=league%3Aeng.1&amp;tags=sport%3Asoccer&amp;tags=gameId%3A671273&amp;tags=betSide%3Ahome&amp;tags=betType%3Astraight&amp;feature=Gameblock"
+                    href="#"
                     data-analytics-extras='{"gameInfo":"671273+Chelsea vs Manchester City"}'
                   >
                     <div

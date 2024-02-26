@@ -240,24 +240,24 @@
               font-weight: 400;
             }
           }
-          .cellWrapper{
+          .cellWrapper {
             .oddsTableCell {
-              background: #F4F4F4;
-              border: 1px solid #CECFCF;
+              background: #f4f4f4;
+              border: 1px solid #cecfcf;
               border-radius: 4px;
               height: 40px;
               margin: auto;
               width: 88px;
-              .oddsTableCellFlex{
+              .oddsTableCellFlex {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 4px;
-                .primaryOdd{
+                .primaryOdd {
                   color: #3772df;
                 }
-                .oddsAlt{
-                  color: #6C6E6F;
+                .oddsAlt {
+                  color: #6c6e6f;
                 }
               }
             }

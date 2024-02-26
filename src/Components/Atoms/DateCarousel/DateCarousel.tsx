@@ -90,7 +90,7 @@ const DateCarousel = () => {
             className={`${style.arrow__button} ${style.left__button}`}
             onClick={handleLeftButtonClick}
           ></button>
-          <div className={style.react__swipe__container}>
+          <div className={style.swipe__container}>
             <div className={style.container}>
               <div className={style.week}>
                 <div className={style.Week__wrapper}>{renderDays()}</div>

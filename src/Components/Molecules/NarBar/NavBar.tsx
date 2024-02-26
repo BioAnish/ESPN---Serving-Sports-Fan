@@ -34,8 +34,8 @@ const NavBar: React.FC<NavBarProps> = () => {
         <h2 className={styles.logo}>
           <a className={styles.logolink}>ESPN</a>
         </h2>
-        <ul className={styles.ul}>
-          <li className={`${styles.li} ${styles.dropdown}`}>
+        <ul className={styles.navigation__tab}>
+          <li className={`${styles.navigation__tab__item} ${styles.dropdown}`}>
             <a
               href="/Soccer"
               className={`${styles.tab__link} ${
@@ -98,7 +98,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               </div>
             </div>
           </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
+          <li className={`${styles.navigation__tab__item} ${styles.dropdown}`}>
             <a
               href="/Soccer"
               className={styles.tab__link}
@@ -148,7 +148,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               </div>
             </div>
           </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
+          <li className={`${styles.navigation__tab__item} ${styles.dropdown}`}>
             <a
               href="/Soccer"
               className={styles.tab__link}
@@ -163,7 +163,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               <DropdownMenu items={SharedData.ncaam.items} />
             </div>
           </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
+          <li className={`${styles.navigation__tab__item} ${styles.dropdown}`}>
             <a
               href="/Soccer"
               className={styles.tab__link}
@@ -178,7 +178,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               <DropdownMenu items={SharedData.nba.items} />
             </div>
           </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
+          <li className={`${styles.navigation__tab__item} ${styles.dropdown}`}>
             <a
               href="/Soccer"
               className={styles.tab__link}
@@ -193,7 +193,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               <DropdownMenu items={SharedData.nfl.items} />
             </div>
           </li>
-          <li className={`${styles.li} ${styles.dropdown}`}>
+          <li className={`${styles.navigation__tab__item} ${styles.dropdown}`}>
             <a
               href="/Soccer"
               className={styles.tab__link}
@@ -212,7 +212,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             <HeaderTools />
           </li>
           <li
-            className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
+            className={`${styles.navigation__tab__item} ${styles.dropdown} ${styles.floatright}`}
           >
             <a href="#" className={styles.tab__link}>
               <span>
@@ -225,7 +225,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
           </li>
           <li
-            className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
+            className={`${styles.navigation__tab__item} ${styles.dropdown} ${styles.floatright}`}
           >
             <a href="#" className={styles.tab__link}>
               <span>
@@ -238,7 +238,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
           </li>
           <li
-            className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
+            className={`${styles.navigation__tab__item} ${styles.dropdown} ${styles.floatright}`}
           >
             <a href="#" className={styles.tab__link}>
               <span className={styles.espnbet}>
@@ -251,7 +251,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
           </li>
           <li
-            className={`${styles.li} ${styles.dropdown} ${styles.floatright}`}
+            className={`${styles.navigation__tab__item} ${styles.dropdown} ${styles.floatright}`}
           >
             <a href="#" className={styles.tab__link}>
               <span className={styles.espnplus}>

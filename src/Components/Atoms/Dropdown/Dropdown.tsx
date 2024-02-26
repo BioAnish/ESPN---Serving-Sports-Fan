@@ -4,9 +4,9 @@ import { IDropdownProps } from "./Dropdown.types";
 
 const Dropdown = ({ children, selectedItem }: IDropdownProps) => {
   return (
-    <div className={style.dropdown_wrapper}>
-      <button className={style.dropdown_button}>{selectedItem || 'Top event'}</button>
-      <div className={`${style.dropdown_container}`}>{children}</div>
+    <div className={style.dropdown__wrapper}>
+      <button className={style.dropdown__button}>{selectedItem || 'Top event'}</button>
+      <div className={`${style.dropdown__container}`}>{children}</div>
     </div>
   );
 };

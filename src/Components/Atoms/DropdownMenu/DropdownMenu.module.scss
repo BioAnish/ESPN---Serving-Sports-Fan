@@ -1,23 +1,19 @@
-.dropdown_container {
-  .dropdownBox {
+.dropdown__container {
+  .dropdown__box {
     background: #fff;
     padding: 10px;
-    list-style: none;
-    margin: 0;
     width: 150px;
     &.blueVariant {
       padding: 6px;
     }
     cursor: pointer;
-    .dropdownBoxItem {
+    .dropdown__box__item {
       border: 0;
       font: inherit;
       font-size: 100%;
-      margin: 0;
-      padding: 0;
       vertical-align: baseline;
       display: list-item;
-      .dropdownBoxItemLink {
+      .dropdown__box__item__link {
         border-radius: 3px;
         color: #6c6d6f;
         display: block;
@@ -36,7 +32,7 @@
       }
     }
     &.blueVariant {
-      .dropdownBoxItemLink {
+      .dropdown__box__item__link {
         color: #000000;
         font-weight: 400;
         font-size: 11px;

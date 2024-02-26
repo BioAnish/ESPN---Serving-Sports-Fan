@@ -62,7 +62,7 @@
           transform: translateY(-50%);
         }
       }
-      .react__swipe__container {
+      .swipe__container {
         overflow: hidden;
         visibility: visible;
         position: relative;
@@ -130,31 +130,31 @@
         }
       }
     }
-  }
-  .calendar__container {
-    .DateCarousel__MonthTrigger {
-      outline: none;
-      background-color: initial;
-      border: 0;
-      border-left: 1px solid #edeef0;
-      border-radius: 0;
-      cursor: pointer;
-      transition: all 0.23s ease-in-out;
-      text-transform: none;
-      overflow: visible;
-      padding-right: 14px;
-      padding-top: 5px;
-      .calendar__icon {
-        color: #6c6d6f;
+    .calendar__container {
+      .DateCarousel__MonthTrigger {
+        outline: none;
+        background-color: initial;
+        border: 0;
+        border-left: 1px solid #edeef0;
+        border-radius: 0;
+        cursor: pointer;
+        transition: all 0.23s ease-in-out;
+        text-transform: none;
+        overflow: visible;
+        padding-right: 14px;
+        padding-top: 5px;
+        .calendar__icon {
+          color: #6c6d6f;
+        }
       }
-    }
-    > div {
-      position: absolute;
-      border: none;
-      right: 0;
-      top: 50px;
-      box-shadow: 0 0 3px 3px #edeef0;
-      z-index: 1;
+      > div {
+        position: absolute;
+        border: none;
+        right: 0;
+        top: 50px;
+        box-shadow: 0 0 3px 3px #edeef0;
+        z-index: 1;
+      }
     }
   }
 }
