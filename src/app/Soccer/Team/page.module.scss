@@ -299,47 +299,6 @@
               }
             }
           }
-          .tabs__nav{
-            border-bottom: 1px solid #edeef0;
-            .tabs__list{
-                display: flex;
-                font-size: 13px;
-                .tabs__list__item{
-                    display: flex;
-                    flex-basis: 100%;
-                    flex-grow: 1;
-                    height: 41px;
-                    justify-content: center;
-                    list-style: none;
-                    position: relative;
-                    text-align: center;
-                    align-items: center;
-                    border-bottom: 0 solid transparent;
-                    &:hover{
-                      border-color: #c00;
-                      border-width: 2px;
-                      cursor: pointer;
-                      padding-bottom: 0;
-                    }
-                    .tabs__link {
-                        display: flex;
-                        height: 37px;
-                        justify-content: center;
-                        padding: 0 12px;
-                        white-space: nowrap;
-                        width: 100%;
-                        align-items: center;
-                        color: #151617;
-                        font-size: 12px;
-                        font-weight: 800;
-                        text-decoration: none;
-                        background: transparent;
-                        border: 0;
-                        cursor: pointer;
-                    }
-                }
-            }
-          }
         }
       }
     }

@@ -5,6 +5,7 @@ import { IDropdownMenuProps } from "./DropdownMenu.types";
 const DropdownMenu = ({
   items = [],
   blueVariant,
+  darkTheme,
   onSelect,
   ...props
 }: IDropdownMenuProps) => {
@@ -16,7 +17,7 @@ const DropdownMenu = ({
   return (
     <div {...props} className={styles.dropdown__container}>
       {items.length > 0 ? (
-        <ul className={`${styles.dropdown__box} ${blueVariant ? styles.blueVariant : ""}`}>
+        <ul className={`${styles.dropdown__box} ${blueVariant ? styles.blueVariant : ""} ${darkTheme ? styles.darkTheme : ""}`}>
           {items.map((item: string, index: number) => (
             <li key={index} className={styles.dropdown__box__item}>
               <a

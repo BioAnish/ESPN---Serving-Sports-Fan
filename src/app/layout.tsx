@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import HeaderCarousel from "@/Components/Molecules/HeaderCarousel/HeaderCarousel";
 import NavBar from "@/Components/Molecules/NarBar/NavBar";
+import NavigationBar from "@/Components/Molecules/ESPNPLUS/NavigationBar/NavigationBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,8 @@ export default function RootLayout({
           <NavBar regionTeams={[]} />
         </div>
         <div className="content">{children}</div>
+        {/* <div className="sticky-header"> <NavigationBar/></div>
+        <div className="content">{children}</div> */}
       </body>
     </html>
   );

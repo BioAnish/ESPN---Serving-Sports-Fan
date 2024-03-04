@@ -1,0 +1,162 @@
+.Nav__Container {
+  background-color: #101113;
+  .Nav__Primary {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1;
+    .Nav__Primary__Branding__Logo {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      .Nav__Primary__Branding__Wrapper {
+        display: flex;
+        height: 44px;
+        padding-left: 0;
+        .Nav__Primary__Branding__espn {
+          margin: 0 34px 0 10px;
+          background-size: 82px 20px;
+          width: 82px;
+          background-image: url(https://secure.espncdn.com/redesign/assets/img/logos/logo-espn-82x20@2x.png);
+        }
+        .Nav__Primary__Branding {
+          background-position: 50%;
+          background-repeat: no-repeat;
+          display: block;
+          height: 44px;
+          position: relative;
+          text-indent: -9999px;
+        }
+      }
+    }
+    .Nav__Primary__Menu {
+      display: flex;
+      //width: 100%;
+      height: 44px;
+      opacity: 1;
+      .Nav__Primary__Menu__Item:hover .dropdownArrowContent {
+        display: flex;
+      }
+      .Nav__Primary__Menu__Item {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 400;
+        &:hover:before {
+          border-color: transparent transparent #252627;
+          //z-index: 1;
+          border-style: solid;
+          border-width: 0 8px 8px;
+          bottom: 0;
+          content: "";
+          height: 0;
+          left: 50%;
+          margin-left: -8px;
+          position: absolute;
+          transition: transform 0.3s ease-in-out;
+          width: 0;
+          //transform: translateY(8px);
+        }
+        .Anchor__Link {
+          color: #fff;
+          padding: 0 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          height: 44px;
+        }
+        .Nav__Primary__Menu__Toggle {
+          outline: none;
+          cursor: pointer;
+          margin: 0;
+          padding: 0;
+          background: transparent;
+          text-transform: none;
+          overflow: visible;
+          font-size: 100%;
+          line-height: 1.15;
+          height: 44px;
+          border: 0;
+          .arrow {
+            color: #fff;
+            height: 18px;
+            width: 18px;
+            vertical-align: middle;
+          }
+        }
+        .dropdownArrowContent {
+            display: none;
+            position: absolute;
+            transition: max-height 0.2s ease-in;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000051;
+            margin: 0 auto;
+            overflow: hidden;
+            top: 44px;
+        }
+      }
+    //   .Nav__Primary__Menu__Item__expanded {
+    //     overflow: hidden;
+    //     display: inline-flex;
+    //     align-items: center;
+    //     position: relative;
+    //     font-size: 14px;
+    //     line-height: 19px;
+    //     font-weight: 400;
+    //     &:hover:before {
+    //       border-color: transparent transparent #252627;
+    //       z-index: 1;
+    //       border-style: solid;
+    //       border-width: 0 8px 8px;
+    //       bottom: 0;
+    //       content: "";
+    //       height: 0;
+    //       left: 50%;
+    //       margin-left: -8px;
+    //       position: absolute;
+    //       transition: transform 0.3s ease-in-out;
+    //       width: 0;
+    //       transform: translateY(0);
+    //     }
+    //   }
+    }
+    .Nav__Primary__Menu__right{
+        flex: none;
+        .Nav__Search__Toggle{
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            margin-left: 10px;
+            .search{
+                height: 25px;
+                margin: auto;
+                width: 30px;
+                color: #fff;
+            }
+            .user {
+                color: #fff;
+                margin: auto;
+                height: 25px;
+                width: 30px;
+            }
+        }
+    }
+    .Nav__Primary__Menu__left{
+        width: 100%;
+    }
+  }
+}
+.Nav__Primary:hover .Nav__Primary__Menu__Item:not(:hover),
+.Nav__Primary:hover .Nav__Primary__Branding__Logo:not(:hover) {
+    opacity: 0.6;
+}
+.menu{
+    height: 30px;
+    margin: 0 -6px;
+    width: 30px;
+}

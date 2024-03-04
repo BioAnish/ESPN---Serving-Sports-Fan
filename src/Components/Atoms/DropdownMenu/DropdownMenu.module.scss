@@ -44,5 +44,19 @@
         }
       }
     }
+    &.darkTheme {
+      background: #333; // Dark theme background color
+      
+      .dropdown__box__item {
+        .dropdown__box__item__link {
+          color: #ccc; // Dark theme text color
+          
+          &:hover {
+            background-color: #555; // Dark theme hover background color
+            color: #fff; // Dark theme hover text color
+          }
+        }
+      }
+    }
   }
 }

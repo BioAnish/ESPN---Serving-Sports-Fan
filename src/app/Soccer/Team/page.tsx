@@ -4,6 +4,7 @@ import style from "./page.module.scss";
 import Button from "@/Components/Atoms/Button/Button";
 import HeadlineCard from "@/Components/Molecules/HeadlineCard/HeadlineCard";
 import HeadlineTopCard from "@/Components/Molecules/HeadlineCard/HeadlineTopCard/HeadlineTopCard";
+import Tabs from "@/Components/Atoms/Tabs/Tabs";
 
 const navigationItems = [
   "Home",
@@ -16,6 +17,10 @@ const navigationItems = [
 ];
 
 const Team = () => {
+  const tabs = [
+    { name: "goals", label: "Goals", content: <div>Goals content</div> },
+    { name: "assists", label: "Assists", content: <div>Assists content</div> },
+  ];
   const [clickedItem, setClickedItem] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const handleClick = (index: number) => {
@@ -250,16 +255,7 @@ const Team = () => {
                   </h4>
                 </div>
               </header>
-              <nav className={style.tabs__nav}>
-                <ul className={style.tabs__list}>
-                  <li className={style.tabs__list__item}>
-                    <button className={style.tabs__link}>Goals</button>
-                  </li>
-                  <li className={style.tabs__list__item}>
-                    <button className={style.tabs__link}>Assists</button>
-                  </li>
-                </ul>
-              </nav>
+              <Tabs tabs={tabs} />
             </section>
           </div>
         </div>
